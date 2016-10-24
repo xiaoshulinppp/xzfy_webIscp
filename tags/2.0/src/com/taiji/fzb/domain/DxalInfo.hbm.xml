@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.fzb.domain">
+
+
+<class 
+    name="DxalInfo" 
+    table="DXAL_INFO"
+>
+
+    <id
+        name="id" type="java.lang.String"
+        column="ID"
+    >
+          <generator class="assigned" />
+      </id>
+  
+    <property
+        name="submit_date"
+        type="java.lang.String"
+        column="submit_date"
+        length="20"
+    />
+    <property
+        name="title"
+        type="java.lang.String"
+        column="title"
+        length="50"
+    />
+
+
+    <property
+        name="keyword"
+        type="java.lang.String"
+        column="keyword"
+        length="20"
+    />
+   <property name="userNames"
+   type="java.lang.String"
+   column="USERNAMES"/>
+
+    <property
+        name="case_type"
+        type="java.lang.String"
+        column="case_type"
+        length="10"
+    />
+    <property
+        name="remarks"
+        type="java.lang.String"
+        column="remarks"
+    />
+
+    <property
+        name="submitter"
+        type="java.lang.String"
+        column="submitter"
+        length="8"
+    />
+    <property
+        name="department"
+        type="java.lang.String"
+        column="department"
+        length="20"
+    />
+
+    <property
+        name="read_count"
+        type="java.lang.Integer"
+        column="read_count"
+    />
+        <property
+        name="comment_count"
+        type="java.lang.Integer"
+        column="comment_count"
+    />
+        <property
+        name="marks"
+        type="java.lang.Integer"
+        column="marks"
+    />
+    	<property name="filePath" type="java.lang.String">
+			<column name="FILEPATH" length="200" />
+		</property>
+		
+		<property name="realFilePath" type="java.lang.String">
+			<column name="REALFILEPATH" length="200" />
+		</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="FILENAME" length="100" />
+		</property>
+		<property name="org_locbm" type="java.lang.String">
+		    <column name="ORG_LOCBM" length="50"></column>
+		</property>
+		<property name="firstAuthor" type="java.lang.String">
+		    <column name="FIRSTAUTHOR" length="10"></column>
+		</property>
+		<property name="secondAuthor" type="java.lang.String">
+		    <column name="SECONDAUTHOR" length="10"></column>
+		</property>
+    
+ 	<set name="dxalcomments"   inverse="true" cascade="all" lazy="false" order-by="id desc" >
+	   <key column="info_id" />
+	   <one-to-many class="DxalComment"/>
+	</set>
+  
+
+</class>
+</hibernate-mapping>

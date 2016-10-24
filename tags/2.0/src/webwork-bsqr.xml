@@ -1,0 +1,27 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="bsqr" extends="default" namespace="/bsqr">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="showList" class="com.taiji.fzb.webwork.BsqrDetailAction"
+			method="showList">
+			<result name="success">/pages/bsqr/showList.ftl</result>
+		</action>
+		<action name="showXzfyInfo" class="com.taiji.fzb.webwork.BsqrDetailAction"
+			method="showXzfyInfo">
+			<result name="success">/pages/bsqr/showXzfyInfo.ftl</result>
+		</action>
+		<action name="saveInfo" class="com.taiji.fzb.webwork.BsqrDetailAction"
+			method="saveInfo">
+			<result name="success" type="chain">
+				<param name="actionName">showList</param>
+			</result>	
+		</action>
+		<action name="updateDftz_content" class="com.taiji.fzb.webwork.BsqrDetailAction"
+			method="updateDftz_content">
+		</action>
+	</package>
+</xwork>

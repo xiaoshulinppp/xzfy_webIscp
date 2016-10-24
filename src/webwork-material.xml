@@ -1,0 +1,42 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="sharing" extends="default" namespace="/material">
+		<default-interceptor-ref name="autowireDefault" />
+		<action name="showMaterialList" class="com.taiji.fzb.webwork.MaterialDetailAction"
+			method="showMaterialList">
+			<result name="success">/pages/banan/materialList.ftl</result>			
+		</action>
+		<action name="showMyMaterialList" class="com.taiji.fzb.webwork.MaterialDetailAction"
+			method="showMyMaterialList">
+			<result name="success">/pages/banan/myMaterialList.ftl</result>			
+		</action>
+		<action name="showMyOrgMaterialList" class="com.taiji.fzb.webwork.MaterialDetailAction"
+			method="showMyOrgMaterialList">
+			<result name="success">/pages/banan/materialList.ftl</result>			
+		</action>
+		<action name="createMaterial" class="com.taiji.fzb.webwork.MaterialDetailAction"
+			method="createMaterial">
+			<result name="success">/pages/banan/createMaterial.ftl</result>			
+		</action>
+		<!--<action name="saveMaterial" class="com.taiji.fzb.webwork.MaterialDetailAction"
+			method="saveMaterial">
+			<result name="success">/pages/banan/myMaterialList.ftl</result>			
+		</action>
+		
+		-->
+		<action name="saveMaterial" class="com.taiji.fzb.webwork.MaterialDetailAction"
+			method="saveMaterial">
+			<result name="success" type="chain">
+				<param name="actionName">showMyMaterialList</param>
+			</result>
+		</action>
+		<action name="showMaterial" class="com.taiji.fzb.webwork.MaterialDetailAction"
+			method="showMaterial">
+			<result name="success">/pages/banan/showMaterial.ftl</result>			
+		</action>
+	</package>
+
+</xwork>

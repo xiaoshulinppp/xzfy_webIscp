@@ -1,0 +1,56 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="banan" extends="default" namespace="/banan">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="showDaibanList" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showDaibanList">
+			<result name="success">/pages/banan/daibanList.ftl</result>
+		</action>
+		
+		<action name="banan" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="banan">
+			<result name="success">/pages/banan/banan.ftl</result>
+		</action>
+		
+		<action name="showDftzList" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showDftzList">
+			<result name="success">/pages/banan/dftzList.ftl</result>
+		</action>
+
+		<action name="savebanan" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savebanan">
+			<result name="success">/pages/banan/success.ftl</result>
+		</action>
+		
+		<action name="saveshenpi" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="saveshenpi">
+			<result name="success">/pages/banan/success.ftl</result>
+		</action>
+		
+		<action name="savexcdc" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savexcdc">
+			<result name="success">/pages/banan/success.ftl</result>
+		</action>
+	
+		<action name="withdrawsp" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="withdrawsp">
+			<result  name="success"  type="chain">
+				<param name="actionName">banan</param>
+			</result>
+		</action>
+		
+		<action name="savedftz" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savedftz">
+			<result name="none"></result>
+		</action>
+			
+			
+			
+	</package>
+
+
+</xwork>

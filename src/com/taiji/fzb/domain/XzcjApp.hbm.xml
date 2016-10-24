@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.taiji.fzb.domain">
+    <class name="XzcjApp" table="XZCJ_APP" >
+    
+    <id name="id"  type="java.lang.Integer" column="id">
+    	<generator class="increment"/>
+    </id>
+    		
+    		<property name="xzcj_id" type="java.lang.String">
+                <column name="xzcj_id" length="100" />
+            </property>
+    		
+    		<property name="proxytype" type="java.lang.String">
+                <column name="PROXYTYPE" length="100" />
+            </property>
+            
+            <property name="app_name" type="java.lang.String">
+                <column name="APP_NAME" length="100" />
+            </property>
+           
+            <property name="sexy" type="java.lang.String">
+                <column name="SEXY" length="100" />
+            </property>
+            
+            <property name="app_id" type="java.lang.String">
+                <column name="APP_ID" length="100" />
+            </property>
+            
+            <property name="address" type="java.lang.String">
+                <column name="ADDRESS" length="100" />
+            </property>
+            
+            <property name="mail_address" type="java.lang.String">
+                <column name="MAIL_ADDRESS" length="100" />
+            </property>
+            
+            <property name="telephone" type="java.lang.String">
+                <column name="TELEPHONE" length="100" />
+            </property>
+          
+            <property name="mobile" type="java.lang.String">
+                <column name="MOBILE" length="100" />
+            </property>
+            
+            <property name="postcode" type="java.lang.String">
+                <column name="POSTCODE" length="100" />
+            </property>
+            
+            <property name="isdeputy" type="java.lang.String">
+                <column name="ISDEPUTY" length="100" />
+            </property>
+            
+            <property name="email" type="java.lang.String">
+                <column name="EMAIL" length="100" />
+            </property>
+            
+            <property name="islink" type="java.lang.String">
+                <column name="ISLINK" length="100" />
+            </property>
+            
+            <property name="deputy_name" type="java.lang.String">
+                <column name="DEPUTY_NAME" length="100" />
+            </property>
+            
+            <property name="deputy_type" type="java.lang.String">
+                <column name="DEPUTY_TYPE" length="100" />
+            </property>
+            
+            <property name="other_type" type="java.lang.String">
+                <column name="OTHER_TYPE" length="100" />
+            </property>
+            
+            <!--
+            
+           
+    
+    
+		    <many-to-one name="xzcjInfo" cascade="all"
+			column="xzcj_id" class="XzcjInfo"  />
+       
+    
+    -->
+    
+    </class>
+</hibernate-mapping>

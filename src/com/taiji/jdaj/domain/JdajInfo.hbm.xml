@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.jdaj.domain">
+
+
+<class 
+    name="JdajInfo" 
+    table="JDAJ_INFO"
+>
+
+    <id
+        name="id" type="java.lang.String"
+        column="ID"
+    >
+          <generator class="assigned" />
+      </id>
+  
+    <property
+        name="receiveDate"
+        type="java.lang.String"
+        column="receiveDate"
+        length="50"
+    />
+    <property
+        name="documentNumber"
+        type="java.lang.String"
+        column="documentNumber"
+    />
+
+
+    <property
+        name="method"
+        type="java.lang.String"
+        column="method"
+        length="20"
+    />
+   <property name="feedback"
+        type="java.lang.String"
+   		column="feedback"
+   />
+
+    <property
+        name="proposal"
+        type="java.lang.String"
+        column="proposal"
+        length="100"
+    />
+    <property
+        name="undertaker"
+        type="java.lang.String"
+        column="undertaker"
+        length="10"
+    />
+    <property 
+    	name="filePath" 
+    	type="java.lang.String">
+	<column name="FILEPATH" length="200" />
+	</property>
+		
+	<property
+	    name="realFilePath"
+	    type="java.lang.String">
+		<column name="REALFILEPATH" length="200" />
+	</property>
+		<property name="fileName" type="java.lang.String">
+			<column name="FILENAME" length="100" />
+		</property>
+	<property
+        name="state"
+        type="java.lang.String"
+        column="state"
+    />
+    <property
+        name="appNames"
+        type="java.lang.String"
+        column="APPNAMES"
+    />
+    
+ 	<set name="apps"   inverse="true" cascade="all" lazy="false" order-by="id desc" >
+	   <key column="jdaj_id" />
+	   <one-to-many class="JdajApp"/>
+	</set>
+  
+
+</class>
+</hibernate-mapping>

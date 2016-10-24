@@ -1,0 +1,69 @@
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="appNewsTemplate" extends="default" namespace="/appNewsTemplate">
+		<default-interceptor-ref name="autowireDefault" />
+		
+		<!-- 获取新闻列表 -->
+		<action name="showSimpleNewsList" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="showSimpleNewsList">
+			<result name="success">
+				/pages/app/webTemplate/news/back/simpleNewsList.ftl
+			</result>
+		</action>
+		
+		<!-- 进入新增简单新闻页面 -->
+		<action name="gotoCreateSimpleNews" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="gotoCreateSimpleNews">
+			<result name="success">
+				/pages/app/webTemplate/news/back/createSimpleNews.ftl
+			</result>
+		</action>
+		
+		<!-- 创建简单新闻 -->
+		<action name="createSimpleNews" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="createSimpleNews">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 删除简单新闻 -->
+		<action name="deleteSimpleNews" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="deleteSimpleNews">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 进入修改简单新闻页面 -->
+		<action name="gotoUpdateSimpleNews" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="gotoUpdateSimpleNews">
+			<result name="success">
+				/pages/app/webTemplate/news/back/updateSimpleNews.ftl
+			</result>
+		</action>
+		
+		<!-- 修改简单新闻 -->
+		<action name="updateSimpleNews" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="updateSimpleNews">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 显示简单新闻信息 -->
+		<action name="showSimpleNewsInfo" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="showSimpleNewsInfo">
+			<result name="success">
+				/pages/app/webTemplate/news/back/simpleNewsInfo.ftl
+			</result>
+		</action>
+		
+		<!-- 发布简单新闻 -->
+		<action name="releaseSimpleNews" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="releaseSimpleNews">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 取消发布简单新闻 -->
+		<action name="cancelReleaseSimpleNews" class="com.taiji.app.webTemplate.news.webwork.action.NewsTemplateAction" method="cancelReleaseSimpleNews">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+	</package>
+</xwork>

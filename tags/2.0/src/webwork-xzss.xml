@@ -1,0 +1,99 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="xzss" extends="default" namespace="/xzss">
+		<default-interceptor-ref name="autowireDefault" />
+
+	
+
+		<action name="XzssAction" class="com.taiji.fzb.webwork.XzssAction"
+			method="gotoCreate">
+			<result name="success">/pages/xzss/addXzss.ftl</result>
+		</action>
+		
+		<action name="saveXzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="saveXzss">
+			<result name="success">/pages/xzss/success.ftl</result>
+		</action>
+
+			
+		<action name="xzssManage" class="com.taiji.fzb.webwork.XzssAction"
+			method="showXzssList">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		
+		<!--<action name="showUndertakerList" class="com.taiji.fzb.webwork.XzssAction"
+			method="showUndertakerList">
+			<result  name="success"  type="chain">
+				<param name="actionName">xzssManage</param>
+			</result>
+		</action>
+		-->
+		<action name="showUndertakerList" class="com.taiji.fzb.webwork.XzssAction"
+			method="showUndertakerList">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>	
+		
+		
+		<action name="showxzss" class="com.taiji.fzb.webwork.XzssAction" 
+			method="showxzss">
+			<result name="success">/pages/xzss/showxzss.ftl</result>
+		</action>
+		
+		<action name="connect" class="com.taiji.fzb.webwork.XzssAction" 
+			method="connect">
+			<result name="success">/pages/xzss/success.ftl</result>
+		</action>
+		
+		<action name="updatexzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="updatexzss">
+			<result name="success">/pages/xzss/xzss.ftl</result>
+		</action>
+		
+		<action name="doUpdatexzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="doUpdatexzss">
+			<result name="success">/pages/xzss/success.ftl</result>
+		</action>
+		
+		<action name="jiean" class="com.taiji.fzb.webwork.XzssAction"
+			method="jiean">
+			<result name="success">/pages/xzss/success.ftl</result>
+		</action>
+		
+		<action name="search" class="com.taiji.fzb.webwork.XzssAction"
+			method="search">
+			<result name="success">/pages/xzss/search.ftl</result>
+		</action>
+		
+		<action name="dosearch" class="com.taiji.fzb.webwork.XzssAction"
+			method="dosearch">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		
+		<!--<action name="deletexzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="deletexzss">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		-->
+		<action name="deletexzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="deletexzss">
+			<result  name="success"  type="chain">
+				<param name="actionName">xzssManage</param>
+			</result>
+		</action>
+		
+		<action name="showJieanlist" class="com.taiji.fzb.webwork.XzssAction"
+			method="showJieanlist">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		
+
+
+		
+		
+	</package>
+
+
+</xwork>

@@ -1,0 +1,224 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="xzss" extends="default" namespace="/xzss">
+		<default-interceptor-ref name="autowireDefault" />
+
+	
+
+		<action name="XzssAction" class="com.taiji.fzb.webwork.XzssAction"
+			method="gotoCreate">
+			<result name="success">/pages/xzss/addXzss.ftl</result>
+		</action>
+		
+		<!-- <action name="saveXzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="saveXzss">
+			<result name="success" type="chain">
+				<param name="actionName">showUndertakerList</param>
+			</result>
+		</action> -->
+
+			
+		<action name="xzssManage" class="com.taiji.fzb.webwork.XzssAction"
+			method="showXzssList">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		
+		<!--<action name="showUndertakerList" class="com.taiji.fzb.webwork.XzssAction"
+			method="showUndertakerList">
+			<result  name="success"  type="chain">
+				<param name="actionName">xzssManage</param>
+			</result>
+		</action>
+		-->
+		<action name="showUndertakerList" class="com.taiji.fzb.webwork.XzssAction"
+			method="showUndertakerList">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		<action name="getxzfypagelist" class="com.taiji.fzb.webwork.XzssAction"
+			method="showXzfyList">
+			<result name="success">/pages/xzss/xzfyManage.ftl</result>
+		</action>	
+		
+		
+		<action name="showxzss" class="com.taiji.fzb.webwork.XzssAction" 
+			method="showxzss">
+			<result name="success">/pages/xzss/showxzss.ftl</result>
+		</action>
+		
+		<action name="connect" class="com.taiji.fzb.webwork.XzssAction" 
+			method="connect">
+			<result name="success">/pages/xzss/success.ftl</result>
+		</action>
+		
+		<action name="updatexzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="updatexzss">
+			<result name="success">/pages/xzss/xzss.ftl</result>
+		</action>
+		
+		<action name="doUpdatexzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="doUpdatexzss">
+			<result name="success" type="chain">
+				<param name="actionName">showUndertakerList</param>
+			</result>
+		</action>
+		
+		<action name="jiean" class="com.taiji.fzb.webwork.XzssAction"
+			method="jiean">
+			<result name="success" type="chain">
+				<param name="actionName">showJieanlist</param>
+			</result>
+		</action>
+		
+		<action name="search" class="com.taiji.fzb.webwork.XzssAction"
+			method="search">
+			<result name="success">/pages/xzss/search.ftl</result>
+		</action>
+		
+		
+		<action name="searchxzfy" class="com.taiji.fzb.webwork.XzssAction"
+			method="searchXzfy">
+			<result name="success">/pages/xzss/xzfylist.ftl</result>
+		</action>
+		<action name="tiquxzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="tiquXzss">
+			<result name="success">/pages/xzss/tiquxzss.ftl</result>
+		</action>
+		<action name="xzssguanli" class="com.taiji.fzb.webwork.XzssAction"
+			method="xzssGuanLi">
+			<result name="success">/pages/xzss/xzssGuanLi.ftl</result>
+		</action>
+		<action name="xzsspipandan" class="com.taiji.fzb.webwork.XzssAction"
+			method="xzssPiPanDan">
+			<result name="success">/pages/xzss/xzsspipandan.ftl</result>
+		</action>
+		<action name="savexzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="saveXzss">
+			<result name="success">/pages/xzss/save_success.ftl</result>
+		</action>
+		<action name="chakanXzfy" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="editlian">
+			<result name="chakan">/pages/xzss/chakanXzfy.ftl</result>
+		</action>
+		<action name="editpipandan" class="com.taiji.fzb.webwork.XzssAction"
+			method="editpipandan">
+			<result name="edit">/pages/xzss/editxzss.ftl</result>
+			<result name="chakan">/pages/xzss/chakanxzss.ftl</result>
+			<result name="success">/pages/xzss/viewxzss.ftl</result>
+		</action>
+		<action name="doeditxzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="editXzss">
+			<result name="success">/pages/record/success_save.ftl</result>
+		</action>
+		<!-- 行政诉讼案卷管理 -->
+		<action name="showXzssFile" class="com.taiji.fzb.webwork.XzssFileAction"
+			method="showXzssFile">
+			<result name="success">/pages/xzss/upxzssFile.ftl</result>
+		</action>
+		<!-- 案卷管理-->
+		<action name="saveXzssFile" class="com.taiji.fzb.webwork.XzssFileAction"
+			method="saveXzssFile">
+			<result name="success">/pages/xzss/doFile_success.ftl</result>
+		</action>
+		<action name="deleteXzssFile" class="com.taiji.fzb.webwork.XzssFileAction"
+			method="deleteXzssFile">
+			<result name="success">/pages/xzss/doFile_success.ftl</result>
+		</action>
+		
+		<action name="downloadFile" class="com.taiji.fzb.webwork.XzssFileAction"
+			method="downloadFile">
+			<result name="success">/pages/xzss/downloadFile.ftl</result>
+		</action>
+		<!-- 修改日志-->
+		<action name="showLogList" class="com.taiji.fzb.webwork.XzssAction"
+			method="showLogList">
+			<result name="success">/pages/xzss/logList.ftl</result>
+		</action>
+		<!-- 结案情况 -->
+		<action name="viewJieAn" class="com.taiji.fzb.webwork.XzssAction"
+			method="editpipandan">
+			<result name="chakan">/pages/xzss/viewJieAn.ftl</result>
+			<result name="edit">/pages/xzss/editJieAn.ftl</result>
+		</action>
+		<action name="editJieAn" class="com.taiji.fzb.webwork.XzssAction"
+			method="editJieAn">
+			<result name="success">/pages/xzss/jiean_saveSuccess.ftl</result>
+		</action>
+		<action name="searchQuanShi" class="com.taiji.fzb.webwork.XzssAction"
+			method="search">
+			<result name="success">/pages/xzss/searchQuanShi.ftl</result>
+		</action>
+		<action name="dosearchQuanShi" class="com.taiji.fzb.webwork.XzssAction"
+			method="dosearchQuanShi">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		
+		<action name="dosearch" class="com.taiji.fzb.webwork.XzssAction"
+			method="dosearch">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		<action name="dosearchxzfy" class="com.taiji.fzb.webwork.XzssAction"
+			method="dosearchXzfy">
+			<result name="success">/pages/xzss/xzfyManage.ftl</result>
+		</action>
+		<!--<action name="deletexzss" class="com.taiji.fzb.webwork.XzssAction"
+			method="deletexzss">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		-->
+		<action name="deletexzssBuMen" class="com.taiji.fzb.webwork.XzssAction"
+			method="deletexzss">
+			<result  name="success"  type="chain">
+				<param name="actionName">xzssManage</param>
+			</result>
+		</action>
+		<action name="deletexzssJieAn" class="com.taiji.fzb.webwork.XzssAction"
+			method="deletexzss">
+			<result  name="success"  type="chain">
+				<param name="actionName">showJieanlist</param>
+			</result>
+		</action>
+		<action name="deletexzssBanLi" class="com.taiji.fzb.webwork.XzssAction"
+			method="deletexzss">
+			<result  name="success"  type="chain">
+				<param name="actionName">showUndertakerList</param>
+			</result>
+		</action>
+		<action name="deletexzssChaXUn" class="com.taiji.fzb.webwork.XzssAction"
+			method="deletexzss">
+			<result  name="success"  type="chain">
+				<param name="actionName">dosearch</param>
+			</result>
+		</action>
+		<action name="deletexzssChaXunQuanShi" class="com.taiji.fzb.webwork.XzssAction"
+			method="deletexzss">
+			<result  name="success"  type="chain">
+				<param name="actionName">dosearchQuanShi</param>
+			</result>
+		</action>
+		<action name="showJieanlist" class="com.taiji.fzb.webwork.XzssAction"
+			method="showJieanlist">
+			<result name="success">/pages/xzss/xzssManage.ftl</result>
+		</action>
+		<action name="chooseShenHeLevel" class="com.taiji.fzb.webwork.XzssAction"
+			method="chooseShenHeLevel">
+			<result name="success">/pages/xzss/chooselevel.ftl</result>
+		</action>
+		<action name="chooseIsfuyi" class="com.taiji.fzb.webwork.XzssAction"
+			method="chooseIsfuyi">
+			<result name="success">/pages/xzss/chooseIsfuyi.ftl</result>
+		</action>
+		<action name="chachongCaseNum" class="com.taiji.fzb.webwork.XzssAction" method="chachongCaseNum">
+		</action>
+		<action name="saveZhuanBaoHao" class="com.taiji.fzb.webwork.XzssAction"
+			method="saveZhuanBaoHao">
+			<result  name="success"  type="chain">
+				<param name="actionName">showUndertakerList</param>
+			</result>
+		</action>
+	</package>
+
+
+</xwork>

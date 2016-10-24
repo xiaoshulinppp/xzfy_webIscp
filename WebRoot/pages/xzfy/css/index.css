@@ -1,0 +1,48 @@
+.formDiv{background:#fff;border:1px solid #dcdcdc;box-shadow:0px 0px 15px 5px rgba(0,0,0,0.3);padding:20px 20px 20px 20px;width:700px;margin:10px auto;line-height:26px;font-size:12px;}
+.formDiv .btn{height:46px; overflow:hidden;}
+.formDiv .fl a{display:block; width:77px; height:27px; line-height:27px; text-align:center; border:#eeeded solid 1px; margin-right:10px; float:left;}
+.formDiv .fr a{display:block; width:77px; height:27px; line-height:27px; text-align:center; border:#eeeded solid 1px; margin-right:10px; float:right;}
+.formDiv .fc a{display:block; width:77px; height:27px; line-height:27px; text-align:center; border:#eeeded solid 1px; margin-left:150px;float:left;}
+.formDiv table{border-left:#eeeded solid 1px; border-bottom:#eeeded solid 1px;width:660px;}
+.formDiv th{border-right:#eeeded solid 1px; border-top:#eeeded solid 1px; height:30px; background:#F0FFF0; color:#5d6d42;}
+.formDiv td{border-right:#eeeded solid 1px; border-top:#eeeded solid 1px; padding:0 20px;}
+.formDiv .input1{float:left; background:url(../image/input2.gif) left top no-repeat; height:35px; line-height:35px; padding:0 10px; border:0px; margin-right:6px;}
+.formDiv .input2{
+	border-color:#C4C4C4 #E9E9E9 #E9E9E9 #C4C4C4;
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+	padding:2px 3px;
+	color:#2e2e2e;
+	float:left;
+	font-family:"微软雅黑","宋体";
+	height:20px;
+	width: 90% !important;
+	 min-width:100px;
+}
+
+.formDiv .btn1{float:left; background:url(../image/btn5.gif); width:65px; height:33px; border:0px; font-size:14px; font-family:"寰蒋闆呴粦"; color:#708c9c;}
+.formDiv .btn4{float:center; background:url(../image/btn4.gif); width:107px; height:37px; border:0px; font-size:14px; font-family:"寰蒋闆呴粦"; color:#708c9c;}
+
+.formDiv .radio{position:relative; top:8px;}
+.formDiv .select{
+                background: #fff;
+				height:26px;/**为了和其他input的22px高效果一样**/
+				font-family:"微软雅黑","宋体";
+	}
+
+
+.formDiv .uploadDiv{height:35px; width:307px; overflow:hidden; position:relative;}
+.formDiv .file{position:absolute; z-index:10; left:0px; top:0px; height:35px; left:230px; width:100px; -moz-opacity:0;filter:alpha(opacity=0);opacity:0;}
+.formDiv .textarea{
+	border-color:#C4C4C4 #E9E9E9 #E9E9E9 #C4C4C4;
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+	padding:2px 3px;
+	color:#2e2e2e;
+	float:left;
+	width:95%;
+	font-family:"微软雅黑","宋体";
+	height:80px;
+}

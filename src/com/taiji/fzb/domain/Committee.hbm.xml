@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.fzb.domain">
+<class 
+    name="Committee" 
+    table="committee"
+    dynamic-update="true"
+	dynamic-insert="true"    
+>
+    <id
+        name="comtId"
+        type="java.lang.Integer"
+        column="comt_id"
+    >
+        <generator class="increment" />
+    </id>
+
+   <property
+        name="comtName"
+        type="java.lang.String"
+        column="comt_name"
+      
+    />	
+    
+    <property
+        name="sexy"
+        type="java.lang.String"
+        column="sexy"
+
+    />
+    <property
+        name="workName"
+        type="java.lang.String"
+        column="work_name"
+
+    />
+   <property
+        name="phone"
+        type="java.lang.String"
+        column="phone"
+ 
+    />	
+
+    <many-to-one name="term" cascade="all"
+			column="term_id" class="Term"  />
+			
+</class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="archive" extends="default" namespace="/archive">
+		<default-interceptor-ref name="autowireDefault" />
+
+
+
+		<action name="showArchiveList" class="com.taiji.archive.webwork.ArchiveAction"
+			method="showArchiveList">
+			<result name="success">/pages/archive/archive.ftl</result>
+		</action>
+		<action name="saveArchives" class="com.taiji.archive.webwork.ArchiveAction"
+			method="saveArchives">
+			<result name="success">/pages/archive/success.ftl</result>
+		</action>
+		<action name="deleteArchive" class="com.taiji.archive.webwork.ArchiveAction"
+			method="deleteArchive">
+			<result name="success">/pages/archive/success.ftl</result>
+		</action>
+		<action name="deleteOldJieanWenshu" class="com.taiji.archive.webwork.ArchiveAction"
+			method="deleteOldJieanWenshu">
+			<result name="success">/pages/archive/success.ftl</result>
+		</action>
+		<!-- 改变在线复议案卷状态 -->
+		<action name="updateStatus" class="com.taiji.archive.webwork.ArchiveAction"
+			method="updateStatus">
+			<result name="success">/pages/archive/success.ftl</result>
+		</action>
+		<!-- 改变行政复议同步到在线复议的案卷状态 -->
+		<action name="updateXzfyStatus" class="com.taiji.archive.webwork.ArchiveAction"
+			method="updateXzfyStatus">
+			<result name="success">/pages/archive/success.ftl</result>
+		</action>
+		<!-- 同步案卷材料到在线复议 -->
+		<action name="archiveToZxfy" class="com.taiji.archive.webwork.ArchiveAction"
+			method="archiveToZxfy">
+			<result name="success">/pages/archive/success.ftl</result>
+		</action>
+
+
+
+	</package>
+
+
+</xwork>

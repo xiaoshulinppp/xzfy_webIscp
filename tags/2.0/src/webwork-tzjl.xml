@@ -1,0 +1,34 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="tzjl" extends="default" namespace="/tzjl">
+		<default-interceptor-ref name="autowireDefault" />
+	
+		<action name="getXzfyId" class="com.taiji.tzjl.webwork.TzjlDetailAction"
+			method="generateXzfyId">
+			<result name="success">/pages/tzjl/getXzfyId.ftl</result>
+		</action>
+		<action name="tzjlInfoList" class="com.taiji.tzjl.webwork.TzjlDetailAction"
+			method="showTzjlList">
+			<result name="success">/pages/tzjl/showTzjlList.ftl</result>
+		</action>
+		<action name="addTzjl" class="com.taiji.tzjl.webwork.TzjlDetailAction"
+			method="gotoAddTzjl">
+			<result name="success">/pages/tzjl/addTzjl.ftl</result>
+		</action>
+		<action name="saveTzjlInfo" class="com.taiji.tzjl.webwork.TzjlDetailAction"
+			method="saveTzjlInfo">
+			<result name="success" type="chain">
+				<param name="actionName">tzjlInfoList</param>
+			</result>
+		</action>
+		<action name="modifyTzjl" class="com.taiji.tzjl.webwork.TzjlDetailAction"
+			method="getTzjl">
+			<result name="success">/pages/tzjl/modifyTzjl.ftl</result>
+		</action>
+	</package>
+
+
+</xwork>

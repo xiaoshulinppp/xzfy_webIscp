@@ -1,0 +1,304 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="meet" extends="default" namespace="/meet">
+		<default-interceptor-ref name="autowireDefault" />
+		<!-- 阅卷提取 -->
+		<action name="showDaibanList" class="com.taiji.meet.webwork.MeetAction"
+			method="showDaibanList">
+			<result name="success">/meetpages/showmeetlist.ftl</result>
+		</action>
+		<!-- 送达提取 -->
+		<action name="showDaibanList1" class="com.taiji.meet.webwork.MeetAction"
+			method="showDaibanList">
+			<result name="success">/meetpages/showmeetlist1.ftl</result>
+		</action>
+		<!-- 转交材料提取 -->
+		<action name="showDaibanList2" class="com.taiji.meet.webwork.MeetAction"
+			method="showDaibanList1">
+			<result name="success">/meetpages/showmeetlist2.ftl</result>
+		</action>
+		<action name="showDaibanList3" class="com.taiji.meet.webwork.MeetAction"
+			method="updateyuejuan">
+			<result name="success">/meetpages/updateyibanjiedai.ftl</result>
+		</action>
+		<!-- 谈话调查提取 -->
+		<action name="showDaibanList4" class="com.taiji.meet.webwork.MeetAction"
+			method="showDaibanList">
+			<result name="success">/meetpages/showmeetlist4.ftl</result>
+		</action>
+		<action name="updateyuejuan" class="com.taiji.meet.webwork.MeetAction"
+			method="updateyuejuan">
+			<result name="success">/meetpages/updateyuejuan.ftl</result>
+		</action>
+		<action name="updatesongda" class="com.taiji.meet.webwork.MeetAction"
+			method="updateyuejuan">
+			<result name="success">/meetpages/updatesongda.ftl</result>
+		</action>
+		<action name="updatezhuanjiaocailiao" class="com.taiji.meet.webwork.MeetAction"
+			method="updateyuejuan">
+			<result name="success">/meetpages/updatezhuanjiaocailiao.ftl</result>
+		</action>
+		<action name="updateyibanjiedai" class="com.taiji.meet.webwork.MeetAction"
+			method="gotoCreate1">
+			<result name="success">/meetpages/updateyibanjiedaii.ftl</result>
+		</action>
+
+		<action name="updateDiaocha" class="com.taiji.meet.webwork.MeetAction"
+			method="updateyuejuan">
+			<result name="success">/meetpages/updateDiaocha.ftl</result>
+		</action>
+
+		<action name="saveFace1" class="com.taiji.meet.webwork.MeetAction"
+			method="saveMeet">
+				<result name="success" >/meetpages/success.ftl</result>
+		</action>
+		<action name="saveFace2" class="com.taiji.meet.webwork.MeetAction"
+			method="saveMeet">
+				<result name="success" >/meetpages/success2.ftl</result>
+		</action>
+		<action name="saveFace3" class="com.taiji.meet.webwork.MeetAction"
+			method="saveMeet">
+				<result name="success" >/meetpages/success3.ftl</result>
+		</action>
+		<action name="saveFace4" class="com.taiji.meet.webwork.MeetAction"
+			method="saveMeet">
+				<result name="success" >/meetpages/success4.ftl</result>
+		</action>
+		<action name="saveFace5" class="com.taiji.meet.webwork.MeetAction"
+			method="saveMeet">
+				<result name="success" >/meetpages/success5.ftl</result>
+		</action>
+
+
+		<action name="appFYfaceInsert1" class="com.taiji.meet.webwork.MeetAction"
+			method="gotoCreate1">
+			<result name="success">/meetpages/MeetClient.ftl</result>
+		</action>
+		<action name="appFYfaceInsert2" class="com.taiji.meet.webwork.MeetAction"
+			method="gotoCreate1">
+			<result name="success">/meetpages/Send.ftl</result>
+		</action>
+		<action name="appFYfaceInsert3" class="com.taiji.meet.webwork.MeetAction"
+			method="gotoCreate1">
+			<result name="success">/meetpages/Transfer.ftl</result>
+		</action>
+		<action name="appFYfaceInsert4" class="com.taiji.meet.webwork.MeetAction"
+			method="gotoCreate1">
+			<result name="success">/meetpages/Usualmeet.ftl</result>
+		</action>
+		<action name="appFYfaceInsert5" class="com.taiji.meet.webwork.MeetAction"
+			method="gotoCreate1">
+			<result name="success">/meetpages/Usualmail.ftl</result>
+		</action>
+		<action name="appFYfaceInsert6" class="com.taiji.meet.webwork.MeetAction"
+			method="gotoCreate1">
+			<result name="success">/meetpages/UsualEmail.ftl</result>
+		</action>
+		<action name="showYiBanJieDaiList" class="com.taiji.meet.webwork.MeetAction" 
+			method="showYiBanJieDaiList">
+			<result name="success">/meetpages/yibanjiedaiList.ftl</result>
+		</action>
+		<action name="showYueJuanList" class="com.taiji.meet.webwork.MeetAction" 
+			method="showYueJuanList">
+			<result name="success">/meetpages/yuejuanList.ftl</result>
+		</action>
+		<action name="showSongDaList" class="com.taiji.meet.webwork.MeetAction" 
+			method="showSongDaList">
+			<result name="success">/meetpages/songdaList.ftl</result>
+		</action>
+				<action name="showZhuanJiaoCaiLiaoList" class="com.taiji.meet.webwork.MeetAction" 
+			method="showZhuanJiaoCaiLiaoList">
+			<result name="success">/meetpages/zhuanjiaocailiaoList.ftl</result>
+		</action>
+		<action name="viewMeet" class="com.taiji.meet.webwork.MeetAction"
+			method="getMeetById">
+			<result name="success">/meetpages/yibanjiedaiView.ftl</result>
+		</action>
+				<action name="viewMeet" class="com.taiji.meet.webwork.MeetAction"
+			method="getMeetById">
+			<result name="success">/meetpages/yibanjiedaiView.ftl</result>
+		</action>
+		<action name="viewSongda" class="com.taiji.meet.webwork.MeetAction"
+			method="getMeetById">
+			<result name="success">/meetpages/updatesongdaview.ftl</result>
+		</action>
+		<action name="viewYuejuan" class="com.taiji.meet.webwork.MeetAction"
+			method="getMeetById">
+			<result name="success">/meetpages/updateyuejuanview.ftl</result>
+		</action>
+		<action name="viewZhuanjiaocailiao" class="com.taiji.meet.webwork.MeetAction"
+			method="getMeetById">
+			<result name="success">/meetpages/updatezhuanjiaocailiaoview.ftl</result>
+		</action>
+		<action name="viewYibanjiedai" class="com.taiji.meet.webwork.MeetAction"
+			method="getMeetById">
+			<result name="success">/meetpages/updateyibanjiedaiiview.ftl</result>
+		</action>
+		
+		
+		
+		<action name="tongji18" class="com.taiji.meet.webwork.MeetAction"
+			method="tongJi">
+			<result name="success">/meetpages/form16.ftl</result>
+		</action>
+		<action name="tongji18_2" class="com.taiji.meet.webwork.MeetAction"
+			method="tongJi_2">
+			<result name="success">/meetpages/form16_2.ftl</result>
+		</action>
+		<action name="tongji18_3" class="com.taiji.meet.webwork.MeetAction"
+			method="tongJi_3">
+			<result name="success">/meetpages/form16_3.ftl</result>
+		</action>
+<!-- 
+		<action name="meet_List" class="com.taiji.meet.webwork.MeetAction"
+			method="showMeetList">
+			<result name="success">/meetpages/Dxal_List.ftl</result>
+		</action>
+		<action name="meet_Search" class="com.taiji.meet.webwork.MeetAction"
+			method="">
+			<result name="success">/meetpages/Dxal_Search.ftl</result>
+		</action>
+		<action name="meet_Save" class="com.taiji.meet.webwork.MeetAction"
+			method="savaMeet">
+			<result name="success">/pages/common/success.ftl</result>
+		</action>
+		<action name="meet_Detail" class="com.taiji.meet.webwork.MeetAction"
+			method="showMeet">
+			<result name="success">/meetpages/Dxal_Detail.ftl</result>
+		</action>
+		<action name="meet_Unset" class="com.taiji.meet.webwork.MeetAction" method="showUnsetList">
+		<result name="success">/meetpages/Dxal_List.ftl
+		</result>		
+		</action>
+		<action name="meet_Setup" class="com.taiji.meet.webwork.MeetAction"
+			method="showSetupList">
+			<result name="success">/meetpages/Dxal_List.ftl</result>
+		</action>
+		<action name="meet_SearchList" class="com.taiji.meet.webwork.MeetAction"
+			method="showSearchList">
+			<result name="success">/meetpages/Dxal_List.ftl</result>
+		</action>
+		<action name="meet_Client" class="com.taiji.meet.webwork.MeetAction"
+		   method="saveClient">
+		   <result  name="success"  type="chain">
+				<param name="actionName">meet_Detail</param>
+			</result>     
+		</action>
+		 -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+ 		<action name="addApp1" class="com.taiji.meet.webwork.MeetAction"
+			method="addClient">
+			<result name="success">/meetpages/appList.ftl</result>
+		</action>		
+		
+		<action name="addLegal1" class="com.taiji.meet.webwork.MeetAction"
+			method="ClientLegal">
+			<result name="success">/meetpages/legalList.ftl</result>
+		</action>	
+		<action name="deleteApp1" class="com.taiji.meet.webwork.MeetAction"
+			method="deleteClient">
+			<result  name="success"  type="chain">
+				<param name="actionName">addApp1</param>
+			</result>
+		</action>
+		<action name="updateApp1" class="com.taiji.meet.webwork.MeetAction"
+			method="updateClient">
+			<result name="success">/meetpages/updateApp.ftl</result>
+		</action>
+		<action name="createLegal1" class="com.taiji.meet.webwork.MeetAction"
+			method="createClient">
+			<result name="success">/meetpages/createLegal.ftl</result>
+		</action>
+		
+
+
+		<action name="createApp1" class="com.taiji.meet.webwork.MeetAction"
+			method="createClient">
+			<result name="success">/meetpages/Meet.ftl</result>
+		</action>
+		
+		<action name="saveNewApp1" class="com.taiji.meet.webwork.MeetAction"
+			method="saveNewClient">
+			<result  name="success"  type="chain">
+				<param name="actionName">addApp1</param>
+			</result>
+		</action>
+		
+		<action name="saveNewLegal1" class="com.taiji.meet.webwork.MeetAction"
+			method="saveNewClient">
+			<result  name="success"  type="chain">
+				<param name="actionName">addLegal1</param>
+			</result>
+		</action>
+		<action name="meetsearch" class="com.taiji.meet.webwork.MeetAction"
+			method="">
+				<result name="success">/meetpages/search.ftl</result>
+		</action>		
+
+		<action name="meetDetail" class="com.taiji.meet.webwork.MeetAction"
+			method="showMeet">
+				<result name="success">/meetpages/applist.ftl</result>
+		</action>			
+
+		
+		<action name="deleteLegal1" class="com.taiji.meet.webwork.MeetAction"
+			method="deleteClient">
+			<result  name="success"  type="chain">
+				<param name="actionName">addLegal1</param>
+			</result>
+		</action>
+		
+		<action name="updateLegal1" class="com.taiji.meet.webwork.MeetAction"
+			method="updateClient">
+			<result name="success">/meetpages/updateLegal1.ftl</result>
+		</action>		
+		
+		<action name="doUpdateApp1" class="com.taiji.meet.webwork.MeetAction"
+			method="doUpdateClient">
+			<result  name="success"  type="chain">
+				<param name="actionName">addApp1</param>
+			</result>
+		</action>
+		
+		<action name="doUpdateLegal1" class="com.taiji.meet.webwork.MeetAction"
+			method="doUpdateClient">
+			<result  name="success"  type="chain">
+				<param name="actionName">addLegal1</param>
+			</result>
+		</action>
+<!-- 
+		<action name="meet_Detail" class="com.taiji.meet.webwork.MeetAction"
+			method="showMeetList">
+			<result name="success">/meet/Meetlist.ftl</result>
+		</action>
+-->
+
+
+
+			
+
+
+	</package>
+
+
+</xwork>

@@ -1,0 +1,153 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="xzcj" extends="default" namespace="/xzcj">
+		<default-interceptor-ref name="autowireDefault" />
+
+	
+
+		<!--<action name="XzssAction" class="com.taiji.fzb.webwork.XzssAction"
+			method="gotoCreate">
+			<result name="success">/pages/xzss/addXzss.ftl</result>
+		</action>	
+		-->
+		
+		<action name="addxzcj" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="gotoCreate">
+			<result name="success">/pages/xzcj/addxzcj.ftl</result>
+		</action>
+		
+		<action name="xzcjManage" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="showXzcjList">
+			<result name="success">/pages/xzcj/xzcjlist.ftl</result>
+		</action>
+		
+		<action name="addApp" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="addApp">
+			<result name="success">/pages/xzcj/appList.ftl</result>
+		</action>		
+		
+		
+		<action name="addLegal" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="addLegal">
+			<result name="success">/pages/xzcj/legalList.ftl</result>
+		</action>	
+		
+		
+		
+		<action name="createApp" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="createApp">
+			<result name="success">/pages/xzcj/createApp.ftl</result>
+		</action>
+		
+		<action name="createLegal" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="createApp">
+			<result name="success">/pages/xzcj/createLegal.ftl</result>
+		</action>
+		
+		<action name="saveNewApp" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="saveNewApp">
+			<result  name="success"  type="chain">
+				<param name="actionName">addApp</param>
+			</result>
+		</action>
+		
+		<action name="saveNewLegal" class="com.taiji.fzb.webwork.XzfyDetailAction"
+			method="saveNewApp">
+			<result  name="success"  type="chain">
+				<param name="actionName">addLegal</param>
+			</result>
+		</action>
+
+		
+		<action name="saveFace" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="saveFace">
+			<result name="success">/pages/xzcj/success.ftl</result>
+		</action>
+
+		<action name="showxzcj" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="showxzcj">
+			<result name="success">/pages/xzcj/showxzcj.ftl</result>
+		</action>
+	
+		<action name="updatexzcj" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="updatexzcj">
+			<result name="success">/pages/xzcj/updatexzcj.ftl</result>
+		</action>
+		
+		<action name="doupdatexzcj" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="doupdatexzcj">
+			<result name="success">/pages/xzcj/success.ftl</result>
+		</action>
+		
+		<action name="searchxzcj" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="searchxzcj">
+			<result name="success">/pages/xzcj/searchxzcj.ftl</result>
+		</action>
+		
+		<action name="dosearchxzcj" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="dosearchxzcj">
+			<result name="success">/pages/xzcj/xzcjlist.ftl</result>
+		</action>
+		
+		<action name="showjieanlist" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="showjieanlist">
+			<result name="success">/pages/xzcj/xzcjlist.ftl</result>
+		</action>
+		
+		<!--<action name="deleteApp" class="com.taiji.fzb.webwork.XzfyDetailAction"
+			method="deleteApp">
+			<result  name="success"  type="chain">
+				<param name="actionName">addApp</param>
+			</result>
+		</action>
+		
+		-->
+		
+		<action name="updateApp" class="com.taiji.fzb.webwork.XzcjDetailAction"
+			method="updateApp">
+			<result name="success">/pages/xzcj/updateapp.ftl</result>
+		</action>
+		
+		
+		
+		<!--<action name="deleteLegal" class="com.taiji.fzb.webwork.XzfyDetailAction"
+			method="deleteApp">
+			<result  name="success"  type="chain">
+				<param name="actionName">addLegal</param>
+			</result>
+		</action>
+		
+		-->
+		
+		<!--<action name="updateLegal" class="com.taiji.fzb.webwork.XzfyDetailAction"
+			method="updateApp">
+			<result name="success">/pages/xzfy/updateLegal.ftl</result>
+		</action>		
+		
+		-->
+		
+		<!--<action name="doUpdateApp" class="com.taiji.fzb.webwork.XzfyDetailAction"
+			method="doUpdateApp">
+			<result  name="success"  type="chain">
+				<param name="actionName">addApp</param>
+			</result>
+		</action>
+		
+		-->
+		
+		<!--<action name="doUpdateLegal" class="com.taiji.fzb.webwork.XzfyDetailAction"
+			method="doUpdateApp">
+			<result  name="success"  type="chain">
+				<param name="actionName">addLegal</param>
+			</result>
+		</action>
+			
+		-->
+	
+	</package>
+
+
+</xwork>

@@ -1,0 +1,45 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="ajgl" extends="default" namespace="/ajgl">
+	<action name="showList1" class="com.taiji.ajgl.webwork.AjDetailAction"
+		method="showList1">
+		<result name="success">/pages/ajgl/showList1.ftl</result>	
+	</action>
+	<action name="gotoUpload" class="com.taiji.ajgl.webwork.AjDetailAction"
+		method="gotoUpload">
+		<result name="success">/pages/ajgl/gotoUpload.ftl</result>	
+	</action>
+	<action name="saveAttachment" class="com.taiji.ajgl.webwork.AjDetailAction"
+		method="saveAttachment">
+		<result name="success" type="chain">
+		</result>	
+	</action>
+	<action name="showList2" class="com.taiji.ajgl.webwork.AjDetailAction"
+		method="showList2">
+		<result name="success">/pages/ajgl/showList2.ftl</result>	
+	</action>
+	<action name="viewAttachment" class="com.taiji.ajgl.webwork.AjDetailAction"
+		method="viewAttachment">
+		<result name="success">/pages/ajgl/viewAttachment.ftl</result>	
+	</action>	
+	<action name="updateAttachment" class="com.taiji.ajgl.webwork.AjDetailAction"
+		method="updateAttachment">
+		<result name="success" type="chain">
+		
+		</result>	
+	</action>
+	<action name="appAnjuView" class="com.taiji.ajgl.webwork.AjDetailAction"
+			method="appAnjuView">
+			<result name="success">/pages/ajgl/App_AnjuView.ftl</result>
+	</action>
+		
+	<action name="xzfy_mulu" class="com.taiji.ajgl.webwork.AjDetailAction"
+			method="viewMulu">
+			<result name="success">/pages/ajgl/App_MuluView.ftl</result>
+	</action>
+	
+	</package>
+</xwork>

@@ -1,0 +1,14 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="yj" extends="default" namespace="/yj">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="showList" class="com.taiji.fzb.webwork.YjDetailAction"
+			method="showList">
+			<result name="success">/pages/yj/showList.ftl</result>
+		</action>
+	</package>
+</xwork>

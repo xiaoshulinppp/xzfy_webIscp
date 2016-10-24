@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.taiji.fzb.domain" >
+<class name="Sms" table="SMS">
+<id name="id" type="java.lang.Integer" column="ID">
+<generator class="increment" />
+</id>
+<property name="xzfy_id" type="java.lang.String" column="XZFY_ID"></property>
+<property name="userid" type="java.lang.String" column="USERID"></property>
+<property name="userorg" type="java.lang.String" column="USERORG"></property>
+<property name="message" type="java.lang.String" column="MESSAGE"></property>
+<property name="username" type="java.lang.String" column="USERNAME"></property>
+</class>
+</hibernate-mapping>

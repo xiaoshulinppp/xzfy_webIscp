@@ -1,0 +1,21 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="web" extends="default" namespace="/web">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="workManageIndex" class="com.taiji.fzb.webwork.XzfyRecordAction">
+			<result name="success">/pages/workManage/work_manage_index.ftl</result>
+		</action>
+		<action name="softwareIndex" class="com.taiji.fzb.webwork.XzfyRecordAction">
+			<result name="success">/pages/workManage/software_index.ftl</result>
+		</action>
+		<action name="softwareList" class="com.taiji.fzb.webwork.XzfyRecordAction">
+			<result name="success">/pages/workManage/software_list.ftl</result>
+		</action>
+	</package>
+
+
+</xwork>

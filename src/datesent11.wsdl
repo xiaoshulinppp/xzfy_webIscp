@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost:8787/zxfy/services/datesent" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://localhost:8787/zxfy/services/datesent" xmlns:intf="http://localhost:8787/zxfy/services/datesent" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema targetNamespace="http://localhost:8787/zxfy/services/datesent" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_xsd_anyType">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:anyType[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://localhost:8787/zxfy/services/datesent"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="StringdogsRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="sentObjectResponse">
+
+      <wsdl:part name="sentObjectReturn" type="impl:ArrayOf_xsd_anyType">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testRequest">
+
+      <wsdl:part name="name" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateStatusRequest">
+
+      <wsdl:part name="XzfyInfo2id" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Receive_real_date" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Receive_date" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="IsBuzheng" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="BzTongzhiriqi" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="BzBuqiriqi" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Lian_date" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Tjzfzh" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Isstop" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Isstop_from" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="BreakTo" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Yanqispdate" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Finish_date" type="xsd:string">
+
+      </wsdl:part>
+
+      <wsdl:part name="Finish_type" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sentObjectRequest">
+
+      <wsdl:part name="operateCode" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sentdogsResponse">
+
+      <wsdl:part name="sentdogsReturn" type="impl:ArrayOf_xsd_anyType">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendnameResponse">
+
+      <wsdl:part name="sendnameReturn" type="impl:ArrayOf_xsd_anyType">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testResponse">
+
+      <wsdl:part name="testReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateStatusResponse">
+
+      <wsdl:part name="updateStatusReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="StringdogsResponse">
+
+      <wsdl:part name="StringdogsReturn" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendnameRequest">
+
+      <wsdl:part name="id" type="xsd:string">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sentdogsRequest">
+
+   </wsdl:message>
+
+   <wsdl:portType name="datesent">
+
+      <wsdl:operation name="test" parameterOrder="name">
+
+         <wsdl:input message="impl:testRequest" name="testRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:testResponse" name="testResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendname" parameterOrder="id">
+
+         <wsdl:input message="impl:sendnameRequest" name="sendnameRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendnameResponse" name="sendnameResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sentdogs">
+
+         <wsdl:input message="impl:sentdogsRequest" name="sentdogsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sentdogsResponse" name="sentdogsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sentObject" parameterOrder="operateCode">
+
+         <wsdl:input message="impl:sentObjectRequest" name="sentObjectRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sentObjectResponse" name="sentObjectResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="Stringdogs">
+
+         <wsdl:input message="impl:StringdogsRequest" name="StringdogsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:StringdogsResponse" name="StringdogsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateStatus" parameterOrder="XzfyInfo2id Receive_real_date Receive_date IsBuzheng BzTongzhiriqi BzBuqiriqi Lian_date Tjzfzh Isstop Isstop_from BreakTo Yanqispdate Finish_date Finish_type">
+
+         <wsdl:input message="impl:updateStatusRequest" name="updateStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateStatusResponse" name="updateStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="datesentSoapBinding" type="impl:datesent">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="test">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="testRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://sentdata.sinosoft.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="testResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8787/zxfy/services/datesent" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendname">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendnameRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://sentdata.sinosoft.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendnameResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8787/zxfy/services/datesent" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sentdogs">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sentdogsRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://sentdata.sinosoft.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sentdogsResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8787/zxfy/services/datesent" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sentObject">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sentObjectRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://sentdata.sinosoft.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sentObjectResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8787/zxfy/services/datesent" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="Stringdogs">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="StringdogsRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://sentdata.sinosoft.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="StringdogsResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8787/zxfy/services/datesent" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateStatusRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://sentdata.sinosoft.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateStatusResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost:8787/zxfy/services/datesent" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="datesentService">
+
+      <wsdl:port binding="impl:datesentSoapBinding" name="datesent">
+
+         <wsdlsoap:address location="http://localhost:8787/zxfy/services/datesent"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

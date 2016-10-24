@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.fzb.domain">
+<class 
+    name="Member" 
+    table="member"
+    dynamic-update="true"
+	dynamic-insert="true"    
+>
+    <id
+        name="memId"
+        type="java.lang.Integer"
+        column="mem_id"
+    >
+        <generator class="increment" />
+    </id>
+
+   <property
+        name="memName"
+        type="java.lang.String"
+        column="mem_name"
+      
+    />	
+    
+    <property
+        name="sexy"
+        type="java.lang.String"
+        column="sexy"
+
+    />
+    <property
+        name="position"
+        type="java.lang.String"
+        column="position"
+
+    />
+   <property
+        name="phone"
+        type="java.lang.String"
+        column="phone"
+ 
+    />	
+    <property
+        name="education"
+        type="java.lang.String"
+        column="edu"
+ 
+    />
+    <property
+        name="recordDate"
+        type="java.lang.String"
+        column="record_date"
+ 
+    />
+    <property
+        name="workName"
+        type="java.lang.String"
+        column="work_name"
+ 
+    />
+    <property
+        name="type"
+        type="java.lang.String"
+        column="type"
+ 
+    />
+    <property
+        name="locbm"
+        type="java.lang.String"
+        column="locbm"
+ 
+    />
+			
+</class>
+</hibernate-mapping>

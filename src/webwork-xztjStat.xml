@@ -1,0 +1,115 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="xztj" extends="default" namespace="/xztj">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="gotoXztjStat" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="gotoXztjStat">
+			<result name="success">/pages/xztj/xztjStatInitial.ftl</result>
+		</action>
+		
+		<action name="gotoOwnStatList" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="gotoOwnStatList">
+			<result name="success">/pages/xztj/myOwnXztjList.ftl</result>
+		</action>
+		
+		<action name="gotoFillNewRecord" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="gotoFillNewRecord">
+			<result name="success">/pages/xztj/newRecordFillPage.ftl</result>
+		</action>
+		
+		<action name="deleteMyXztjRecord" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="deleteMyXztjRecord">
+			<result  name="success"  type="chain">
+				<param name="actionName">gotoOwnStatList</param>
+			</result>
+		</action>
+		
+		<!-- ajax查重 -->
+		<action name="judgeExistOrNot" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="judgeExistOrNot">			
+		</action>
+		
+		<action name="saveXztjStatNew" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="saveXztjStatNew">
+			<!-- <result name="success">/pages/xztj/jumpToHeadPage.ftl</result> -->
+			<result  name="success"  type="chain">
+				<param name="actionName">gotoOwnStatList</param>
+			</result>
+		</action>	
+		
+		<!-- 统计表1审核 -->	
+		<action name="gotoAudit" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="gotoAudit">
+			<result name="success">/pages/xztj/xztjAuditList.ftl</result>
+		</action>
+		
+		<!-- 正式审核 -->	
+		<action name="formalXztjAudit" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="formalXztjAudit">
+			<result name="success">/pages/xztj/auditpage.ftl</result>
+		</action>
+		
+		<!-- 保存正式审核结果 -->	
+		<action name="saveAuditResult" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="saveAuditResult">
+			<!--<result name="success">/pages/xztj/jumpToHeadPage.ftl</result>-->
+			<result  name="success"  type="chain">
+				<param name="actionName">gotoAudit</param>
+			</result>
+		</action>
+		
+		<!-- 查看审核结果 -->	
+		<action name="viewXztjAuditRlt" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="viewXztjAuditRlt">
+			<result name="success">/pages/xztj/viewAuditResult.ftl</result>
+		</action>
+		
+		<!-- 填报人修改源数据 -->	
+		<action name="reviseSrcData" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="reviseSrcData">
+			<result name="success">/pages/xztj/reviseMyOwnSrcData.ftl</result>
+		</action>
+		
+		<!-- 保存填报人修改源数据结果-->	
+		<action name="saveReviseResult" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="saveReviseResult">
+			<result  name="success"  type="chain">
+				<param name="actionName">gotoOwnStatList</param>
+			</result>
+		</action>
+		
+		<!-- 统计表2 -->	
+		<action name="gotoDisplayStat" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="gotoDisplayStat">
+			<result name="success">/pages/xztj/xztjStatWholeSum.ftl</result>
+		</action>			
+		
+		
+		<action name="gotoAllXztjCenterOnly" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="gotoAllXztjCenterOnly">
+			<result name="success">/pages/xztj/xztjCenterInitial.ftl</result>
+		</action>
+		
+		<action name="gotoCenterStatList" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="gotoCenterStatList">
+			<result name="success">/pages/xztj/xztjCenterStatList.ftl</result>
+		</action>
+		
+		<action name="showDetailListOneByOne" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="showDetailListOneByOne">
+			<result name="success">/pages/xztj/xztjDetailStatList.ftl</result>
+		</action>
+		
+		<!-- test for print -->
+		<action name="printComeTrue" class="com.taiji.xztj.webwork.XztjStatDetailAction"
+			method="printComeTrue">
+			<result name="success">/pages/xztj/newcreatexzjc1.ftl</result>
+		</action>
+	</package>
+
+
+</xwork>

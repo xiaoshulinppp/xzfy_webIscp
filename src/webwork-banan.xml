@@ -1,0 +1,287 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="banan" extends="default" namespace="/banan">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="showDaibanList" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showDaibanList">
+			<result name="success">/pages/banan/daibanList.ftl</result>
+		</action>
+		
+		<action name="banan" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="banan">
+			<result name="success">/pages/banan/banan.ftl</result>
+		</action>
+		
+		<action name="bananform" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="bananform">
+			<result name="success">/pages/banan/form.ftl</result>
+		</action>
+		<action name="showsamexwList" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showsamexwList">
+			<result name="success">/pages/banan/samexwList.ftl</result>
+		</action>
+		<action name="showsamekindxwList" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showsamekindxwList">
+			<result name="success">/pages/banan/samexwList.ftl</result>
+		</action>
+		<action name="anjianbanliform" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="anjianbanliform">
+			<result name="success">/pages/banan/anjianbanli.ftl</result>
+		</action>
+		<action name="dftzform" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="dftzform">
+			<result name="success">/pages/banan/dftz.ftl</result>
+		</action>
+		<action name="yanqiform" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="yanqiform">
+			<result name="success">/pages/banan/yanqi.ftl</result>
+		</action>		
+		<action name="zhongzhiform" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="zhongzhiform">
+			<result name="success">/pages/banan/zhongzhi.ftl</result>
+		</action>
+		<action name="huifuform" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="huifuform">
+			<result name="success">/pages/banan/huifu.ftl</result>
+		</action>
+		<action name="jieanform" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="jieanform">
+			<result name="success">/pages/banan/jiean.ftl</result>
+		</action>
+		
+		<action name="showDftzList" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showDftzList">
+			<result name="success">/pages/banan/dftzList.ftl</result>
+		</action>
+		<!--  保存案件信息 -->
+		<action name="saveanjianbanli" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savebanan">
+			<result name="success">/pages/banan/success_anjianbanli.ftl</result>
+		</action>
+		<!--  完成审批 -->
+		<action name="savebanan" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savebanan">
+			<result name="success">/pages/banan/success_sp.ftl</result>
+		</action>
+		
+		<!--
+		<action name="savebanan" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savebanan">
+			<result name="success" type="chain">
+				<param name="actionName">bananform</param>
+			</result>
+		</action>
+		-->
+		<!--<action name="saveshenpi" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="saveshenpi">
+			<result name="success" type="chain">
+				<param name="actionName">showTotalPagexzfy</param>
+			</result>
+		</action>
+		
+		-->
+		<!--  提交审批 -->
+		<action name="saveshenpi" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="saveshenpi">
+			<result name="success">/pages/banan/success_sp.ftl</result>
+		</action>
+		<!--  呈报表暂存 -->
+		<action name="savechengbaobiao" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savechengbaobiao">
+			<result name="success">/pages/banan/success_anjianbanli.ftl</result>
+		</action>
+		
+		
+		
+		<action name="showTotalPagexzfy" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="showTotalPage">
+			<result name="success">/pages/xzfy/totalPage.ftl</result>
+		</action>
+		
+		<action name="savexcdc" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savexcdc">
+			<result name="success">/pages/banan/success.ftl</result>
+		</action>
+	<!--  撤回审批 -->
+		<action name="withdrawsp" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="withdrawsp">
+			<result name="success">/pages/record/success_save.ftl</result>
+		</action>
+		
+		<!-- 打开短信收件人ftl -->
+		<action name="smsReceiver" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="smsReceiver">
+			<result name="success">/pages/banan/smsReceiver.ftl</result>
+		</action>
+		<!--  撤回答复通知 -->
+		<action name="withdrawDftz" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="withdrawDftz">
+			<result name="success">/pages/banan/success_anjianbanli.ftl</result>
+		</action>
+		<!--  保存dftz -->
+		<action name="savedftz" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savedftz">
+			<result name="success">/pages/banan/success_anjianbanli.ftl</result>
+		</action>
+		<!--  发送答复通知 -->
+		<action name="commitdftz" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="commitdftz">
+			<result name="success">/pages/banan/success_anjianbanli.ftl</result>
+		</action>
+		<!--  删除答复通知的通知书或者申请书等 -->
+		<action name="deldftzElem" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="deldftzElem">
+			<result name="success">/pages/banan/success_anjianbanli.ftl</result>
+		</action>
+		<!--  保存短信内容 -->
+		<action name="saveSms" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="saveSms">
+			<result name="success">/pages/banan/success_anjianbanli.ftl</result>
+		</action>
+		
+		<action name="anjianbanliroad" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="anjianbanliroad">
+			<result name="success">/pages/banan/anjian.ftl</result>
+		</action>
+			
+		<action name="showanjianbanliList" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showanjianbanliList">
+			<result name="success">/pages/banan/anjianbanliList.ftl</result>
+		</action>
+		
+		<action name="weiban" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="weiban">
+			<result name="success">/pages/banan/weiban.ftl</result>
+		</action>
+		
+		<action name="saveweiban" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="saveweiban">
+			<result name="success" type="chain">
+				<param name="actionName">weiban</param>
+			</result>
+		</action>
+		
+		<action name="savekeyword" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="savekeyword">
+			<result name="success" type="chain">
+				<param name="actionName">weiban</param>
+			</result>
+		</action>
+		
+		<action name="deletekeyword" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="deletekeyword">
+			<result name="success" type="chain">
+				<param name="actionName">weiban</param>
+			</result>
+		</action>
+		
+		<action name="showTotalList" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showTotalList">
+			<result name="success">/pages/banan/anjianbanliList.ftl</result>
+		</action>
+		
+		<!-- 统计统计统计统计  -->
+		<action name="form10Search" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="form10Search">
+			<result name="success">/pages/banan/formSearch.ftl</result>
+		</action>
+		<action name="showForm10" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showForm10">
+			<result name="success">/pages/banan/form10.ftl</result>
+		</action>
+		<action name="tongJi" class="com.taiji.fzb.webwork.BananDetailAction" 
+			method="tongJi">
+			<result name="success">/pages/banan/form11.ftl</result>
+		</action>
+		<action name="gfbtongJi" class="com.taiji.fzb.webwork.BananDetailAction" 
+			method="gfbtongJi">
+			<result name="success">/pages/banan/form1.ftl</result>
+		</action>
+		<action name="form1Search" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="form1Search">
+			<result name="success">/pages/banan/form1Search.ftl</result>
+		</action>
+		<action name="jiedaiSearch" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="jiedaiSearch">
+			<result name="success">/pages/banan/jiedaiSearch.ftl</result>
+		</action>
+		
+		<action name="jiedaiSearch2" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="jiedaiSearch2">
+			<result name="success">/pages/banan/jiedaiSearch2.ftl</result>
+		</action>
+		
+		<action name="showDmjiedaiList" class="com.taiji.fzb.webwork.BananDetailAction" 
+			method="showDmjiedaiList">
+			<result name="success">/pages/banan/jiedaiList.ftl</result>
+		</action>
+		
+		<action name="showDmjiedaiList2" class="com.taiji.fzb.webwork.BananDetailAction" 
+			method="showDmjiedaiList2">
+			<result name="success">/pages/banan/jiedaiList2.ftl</result>
+		</action>
+		
+		
+		<action name="batOperation" class="com.taiji.fzb.webwork.BananDetailAction" 
+			method="batOperation">
+			<result name="success">/pages/banan/batOperation.ftl</result>
+		</action>
+		<action name="savebat" class="com.taiji.fzb.webwork.BananDetailAction" 
+			method="savebat">
+			<result name="success">/pages/banan/batSuccess.ftl</result>
+		</action>
+		<action name="showRijiedaiList" class="com.taiji.fzb.webwork.BananDetailAction" 
+			method="showRijiedaiList">
+			<result name="success">/pages/banan/rijiedaiList.ftl</result>
+		</action>
+		<action name="deleteFile" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="deleteFile">
+			<result name="success">/pages/banan/delete_file.ftl</result>
+		</action>
+			
+		<!--  统计表22：行政复议机关办案效果指标统计-->
+		<action name="getBananxgTj" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="getBananxgTj">
+			<result name="success">/pages/banan/form22bananxg.ftl</result>
+		</action>
+		
+		<!--  查重-->
+		<action name="checkAnhao" class="com.taiji.fzb.webwork.BananDetailAction" method="checkAnhao">
+		</action>
+		<action name="checkXwnum" class="com.taiji.fzb.webwork.BananDetailAction" method="checkXwnum">
+		</action>
+		<action name="getcheckXwnumListByPage" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="getcheckXwnumListByPage">
+			<result name="success">/pages/banan/samexwList.ftl</result>
+		</action>
+		<action name="checkAppnum" class="com.taiji.fzb.webwork.BananDetailAction" method="checkAppnum">
+		</action>
+		<action name="getCheckAppnumListByPage" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="getCheckAppnumListByPage">
+			<result name="success">/pages/banan/samexwList.ftl</result>
+		</action>
+		<action name="hasInformed" class="com.taiji.fzb.webwork.BananDetailAction" method="hasInformed">
+		</action>
+		<action name="showInform" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showInform">
+			<result name="success">/pages/banan/indexInform.ftl</result>
+		</action>
+		<!-- 当面补正查看 -->
+		<action name="showDmbz" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="showDmbz">
+			<result name="success">/pages/xzfy/chaKanDmbzInfo.ftl</result>
+		</action>
+		
+		<!-- 是否及时登记案件监控统计 -->
+		<action name="jishidengji" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="jishidengji">
+			<result name="success">/pages/indexTj/detailChart.ftl</result>
+		</action>
+	</package>
+
+
+</xwork>

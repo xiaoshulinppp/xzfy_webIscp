@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.fzb.domain">
+<class 
+    name="EvidenceAttachment" 
+    table="EVIDENCEATTACHMENT"
+    dynamic-update="true"
+	dynamic-insert="true"    
+>
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="id"
+    >
+        <generator class="increment" />
+    </id>
+
+   <property
+        name="xzfyId"
+        type="java.lang.String"
+        column="xzfyId"
+      
+    />	
+    
+    <property
+        name="fileName"
+        type="java.lang.String"
+        column="fileName"
+
+    />
+    <property
+        name="realFilePath"
+        type="java.lang.String"
+        column="realFilePath"
+
+    />
+   <property
+        name="filePath"
+        type="java.lang.String"
+        column="filePath"
+ 
+    />	
+			
+</class>
+</hibernate-mapping>

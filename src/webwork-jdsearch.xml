@@ -1,0 +1,21 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="jdquery" extends="default" namespace="/jdquery">
+		<default-interceptor-ref name="autowireDefault" />
+		
+		<action name="showJieDaiKeys" class="com.taiji.tongJi.action.AdvancedSearchToReceivingAction"
+			method="showJieDaiKeys">
+			<result name="success">/pages/tongJi/showJieDaiKeys.ftl</result>
+		</action>
+		
+		<action name="showSearchResult" class="com.taiji.tongJi.action.AdvancedSearchToReceivingAction"
+			method="showSearchResult">
+			<result name="success">/pages/tongJi/showSearchResult.ftl</result>
+		</action>
+    </package>
+
+
+</xwork>

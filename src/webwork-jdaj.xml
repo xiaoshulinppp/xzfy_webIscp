@@ -1,0 +1,70 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="jdaj" extends="default" namespace="/jdaj">
+		<default-interceptor-ref name="autowireDefault" />
+		<action name="jdajSubmit" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="gotoCreate">
+			<result name="success">/pages/jdaj/jdajSubmit.ftl</result>
+		</action>
+		<action name="jdajSave" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="saveJdajInfo">
+		    <result name="success">/pages/jdaj/success.ftl</result>
+		</action>
+		<action name="addApp" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="addApp">
+		    <result name="success">/pages/jdaj/appList.ftl</result>	
+		</action>
+		<action name="createApp" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="gotoCreateApp">
+		    <result name="success">/pages/jdaj/createApp.ftl</result>
+		</action>
+		<action name="saveApp" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="saveJdajApp">
+		    <result name="success" type="chain">
+				<param name="actionName">addApp</param>
+			</result>
+		</action>
+		<action name="deleteApp" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="deleteJdajApp">
+			<result name="success" type="chain">
+				<param name="actionName">addApp</param>
+			</result>
+		</action>
+		<action name="updateApp" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="updateJdajApp">
+			<result name="success" >/pages/jdaj/updateApp.ftl</result>
+		</action>
+		<action name="doUpdateApp" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="doUpdateJdajApp">
+			<result name="success" type="chain">
+				<param name="actionName">addApp</param>
+			</result>
+		</action>
+
+		<action name="jdajList" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="showJdajList">
+			<result name="success" >/pages/jdaj/jdajList.ftl</result>
+		</action>
+		<action name="deleteInfo" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="deleteJdaj">
+			<result name="success" type="chain">
+			<param name="actionName">jdajList</param>
+			</result>
+		</action>
+		<action name="modifyInfo" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="showInfo">
+			<result name="success" >/pages/jdaj/showInfo.ftl</result>
+		</action>
+		<action name="updateInfo" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="saveJdajInfo">
+		    <result name="success">/pages/jdaj/success.ftl</result>
+		</action>
+		<action name="jdajSearch" class="com.taiji.jdaj.webwork.JdajDetailAction"
+			method="searchJdaj">
+		    <result name="success">/pages/jdaj/jdajSearch.ftl</result>
+		</action>
+	</package>
+</xwork>

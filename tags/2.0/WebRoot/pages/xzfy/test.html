@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>当面接待</title>
+
+
+<link href="../../css/16B/style.css" rel="stylesheet" type="text/css" />
+<body>
+<form action="''" name="form1" id="form1" method="post" ENCTYPE="multipart/form-data">
+<table width="98%" border="0" align="center" cellpadding="3" cellspacing="0" class="tabout">
+
+    <tr class="trcolor" id="shenqingren1">
+  	<td class="tdFormText">申请人：</td>
+    <td class="tdFormInput" colspan=3>
+    <a href="javascript:opendg('../../pages/xzfy/gzjl_list_person_new.html',500,500)"  style="display:block" >添加</a>
+    <textarea name="app_face.shenqingren" type="text" class="textarea"   ></textarea>
+    </td>
+   </tr>
+
+
+</form>
+</body>
+<!--                       Javascripts 注意不要改变顺序                      -->
+<!--列表结束-->
+<!--                       Javascripts 注意不要改变顺序                      -->
+<script type="text/javascript" src="../../js/16B/jquery-1.8.2.min.js"></script>
+<!-- 组件template -->
+<script type="text/javascript" src="../../js/16B/tpl.base.js"></script>
+<!-- 弹出遮罩层-->
+<script type="text/javascript" src="../../js/lhgdialog/lhgdialog.min.js"></script>
+<script type="text/javascript" >
+function opendg(dgurl,dgw,dgh)
+{
+  $.dialog({ 
+    title:'弹出视窗',
+    width: dgw,
+    height: dgh,
+    content:'url:'+ dgurl});
+}
+</script>
+<!--javascript脚本添加位置。-->
+</head>

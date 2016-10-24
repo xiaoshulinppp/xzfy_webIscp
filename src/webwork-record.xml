@@ -1,0 +1,441 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="record" extends="default" namespace="/xzfy">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="appAnjuView" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="appAnjuView">
+			<result name="success">/pages/record/App_AnjuView.ftl</result>
+		</action>
+
+		<action name="xzfy_mulu" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewMulu">
+			<result name="success">/pages/record/App_MuluView.ftl</result>
+		</action>
+
+		<action name="saveLianInfo" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="saveLianshencha1">
+			<result name="success">/pages/record/success_save.ftl</result>
+		</action>
+
+		<action name="finishLianInfo" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="finishLianInfo">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="finishLianInfo1" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="finishLianInfo1">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="finishJieanInfo1" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="finishJieanInfo1">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="saveJiean" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="saveJiean">
+			<result name="success">/pages/record/success_save.ftl</result>
+		</action>
+
+		<action name="saveJiean_finish" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="saveJiean">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="deleteFile" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="deleteFile">
+			<result name="success">/pages/record/success_save.ftl</result>
+		</action>
+
+		<action name="getlian" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="lianTiqu">
+			<result name="success">/pages/xzfy/liAnShenChaWeb.ftl</result>
+		</action>
+
+		<action name="getliatn" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="lianTiqu">
+			<result name="success">/pages/banan/banan.ftl</result>
+		</action>
+
+		<action name="editlian1" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewlian">
+			<result name="success">/pages/xzfy/editliAnShenCha.ftl</result>
+		</action>
+
+		<action name="viewlian" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewlian">
+			<result name="success">/pages/xzfy/viewliAnShenCha.ftl</result>
+		</action>
+
+		<action name="editlian" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="editlian">
+			<result name="success">/pages/xzfy/viewliAnShenCha.ftl</result>
+			<result name="chakan">/pages/xzfy/chaKanCaseInfo.ftl</result>
+		</action>
+
+		<action name="saveCailiao" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="saveCailiao">
+			<result name="success">/pages/record/success_save.ftl</result>
+		</action>
+
+		<action name="editCailiao" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="editCailiao">
+			<result name="success">/pages/xzfy/editCailiao.ftl</result>
+		</action>
+
+		<action name="updatelian" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="editlian">
+			<result name="success">/pages/xzfy/updateliAnShenCha.ftl</result>
+		</action>
+
+		<action name="updatelianFrame" class="com.taiji.fzb.webwork.XzfyRecordAction">
+			<result name="success">/pages/xzfy/updateCaseWeb.ftl</result>
+		</action>
+
+		<action name="viewBuzheng" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewlian">
+			<result name="success">/pages/xzfy/ViewBuZheng.ftl</result>
+		</action>
+
+		<action name="viewBuShouLi" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewlian">
+			<result name="success">/pages/xzfy/viewBuShouLi.ftl</result>
+		</action>
+
+		<action name="viewShouLi" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewlian">
+			<result name="success">/pages/xzfy/viewShouLi.ftl</result>
+		</action>
+
+		<action name="saveToDoc" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="saveToDoc">
+			<result name="success">/pages/xzfy/success.ftl</result>
+		</action>
+
+		<action name="subCheckCase" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="subCheckCase">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="saveCase" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="saveCase">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="finishLian" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="finishLian">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="cancleListCase" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="cancleCheckCase">
+			<result name="success">/pages/record/cancleListSuccess.ftl</result>
+		</action>
+
+		<action name="cancleCheckCase" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="cancleCheckCase">
+			<result name="success">/pages/record/cancleSuccess.ftl</result>
+		</action>
+
+		<action name="finishCheckCase" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="finishCheckCase">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="finishLianCase" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="finishLianCase">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="finishJieanCase" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="finishJieanCase">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="showCheckList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getCheckListById">
+			<result name="success">/pages/xzfy/checkList.ftl</result>
+		</action>
+
+		<action name="showTotalList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="showTotalList">
+			<result name="success">/pages/xzfy/totalList.ftl</result>
+		</action>
+
+		<action name="showTotalPage" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="showTotalPage">
+			<result name="success">/pages/xzfy/totalPage.ftl</result>
+		</action>
+
+		<action name="returnTotalPage" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="returnTotalPage">
+			<result name="success">/pages/xzfy/opSuccess.ftl</result>
+		</action>
+
+		<action name="saveLianshencha1" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="saveLianshencha1">
+			<result name="success">/pages/xzfy/opSuccess.ftl</result>
+		</action>
+
+		<action name="showUserShenChaList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="showUserShenChaList">
+			<result name="success">/pages/xzfy/shenchaList.ftl</result>
+		</action>
+
+		<action name="showUserBanLiList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="showUserBanLiList">
+			<result name="success">/pages/xzfy/userbanliList.ftl</result>
+		</action>
+
+		<action name="totalPage_index1" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="totalPage_index1">
+			<result name="success">/pages/xzfy/totalPage_index1.ftl</result>
+		</action>
+
+		<action name="handleOpreator" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="handleOpreator">
+			<result name="success">/pages/xzfy/handleUserList.ftl</result>
+		</action>
+		<action name="handleOpreatorXinShou" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="handleOpreatorXinShou">
+			<result name="success">/pages/xzfy/handleUserList.ftl</result>
+		</action>
+
+		<action name="getCheckList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getCheckList">
+			<result name="success">/pages/xzfy/checkList.ftl</result>
+		</action>
+
+		<action name="getCaseList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getCaseList">
+			<result name="success">/pages/xzfy/daibanList.ftl</result>
+		</action>
+
+
+		<action name="addBzContent" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="addBzContent">
+			<result name="success">/pages/xzfy/addBzContent.ftl</result>
+		</action>
+
+
+		<action name="setHandleUser" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="setHandleUser">
+			<result name="success">/pages/xzfy/handleUserSuccess.ftl</result>
+		</action>
+
+		<action name="shenpiInfo" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="shenpiInfo">
+			<result name="success">/pages/xzfy/liAnShenPiWeb.ftl</result>
+		</action>
+
+		<action name="viewLianShepi" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="shenpiInfo">
+			<result name="success">/pages/record/viewLianShepi.ftl</result>
+		</action>
+
+		<action name="anjianShenpi" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="shenpiInfo">
+			<result name="success">/pages/xzfy/shenpi2.ftl</result>
+		</action>
+
+		<action name="bananShenpi" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="shenpiInfo">
+			<result name="success">/pages/xzfy/shenpi3.ftl</result>
+		</action>
+
+		<action name="anjianShenpiView" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="shenpiInfoView">
+			<result name="success">/pages/xzfy/ViewShenpi.ftl</result>
+		</action>
+
+		<action name="shenpiFormInfo" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="shenpiInfo">
+			<result name="success">/pages/record/editShenpiForm.ftl</result>
+		</action>
+
+		<action name="buzhengFormInfo" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="shenpiInfo">
+			<result name="success">/pages/record/editBuzhengForm.ftl</result>
+		</action>
+
+		<action name="shenpiSubmit" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="shenpiSubmit">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="returnSubmit" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="returnSubmit">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="viewCase" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewCase">
+			<result name="success">/pages/xzfy/viewCaseWeb.ftl</result>
+		</action>
+
+<action name="viewCase_w" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewCase_w">
+			<result name="success">/pages/xzfy/App_FaceInsert_view.ftl</result>
+		</action>
+		
+		<action name="viewCase_w2" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewCase_w">
+			<result name="success">/pages/xzfy/App_FaceInsert_view2.ftl</result>
+		</action>
+		<action name="viewCase_w2_x" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="viewCase_w">
+			<result name="success">/pages/xzfy/App_FaceInsert_view2_x.ftl</result>
+		</action>
+
+		<action name="buzhengSubmit" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="buzhengSubmit">
+			<result name="success">/pages/record/success_op.ftl</result>
+		</action>
+
+		<action name="buzhengSave" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="buzhengSave">
+			<result name="success">/pages/xzfy/success.ftl</result>
+		</action>
+
+		<action name="buzhengCancle" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="buzhengCancle">
+			<result name="success">/pages/record/cancleSuccess.ftl</result>
+		</action>
+
+		<action name="buzhengFinish" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="buzhengFinish">
+			<result name="success">/pages/record/cancleSuccess.ftl</result>
+		</action>
+
+		<action name="viewBananMian" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="banan">
+			<result name="success">/pages/record/bananMain.ftl</result>
+		</action>
+
+		<action name="viewBanan" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="banan">
+			<result name="success">/pages/record/bananInfo.ftl</result>
+		</action>
+
+
+		<action name="viewYanqi" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="banan">
+			<result name="success">/pages/record/viewYanqi.ftl</result>
+		</action>
+
+
+		<action name="viewZhongzhi" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="banan">
+			<result name="success">/pages/record/viewZhongzhi.ftl</result>
+		</action>
+
+
+		<action name="viewHuifu" class="com.taiji.fzb.webwork.BananDetailAction"
+			method="banan">
+			<result name="success">/pages/record/viewHuifu.ftl</result>
+		</action>
+
+		<action name="showLogList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="showLogList">
+			<result name="success">/pages/record/showLogList.ftl</result>
+		</action>
+		
+		<action name="showLogList2" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="showLogList2">
+			<result name="success">/pages/record/showLogList2.ftl</result>
+		</action>
+		
+
+		<action name="openReceive" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="openReceive">
+			<result name="success">/pages/record/openReceive.ftl</result>
+		</action>
+
+		<action name="getHead" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getHead">
+			<result name="success">/pages/website/header.ftl</result>
+		</action>
+
+		<action name="getWordList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getWordList">
+			<result name="success">/pages/record/getWordList.ftl</result>
+		</action>
+
+		<action name="getMemberList" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getWordList">
+			<result name="success">/pages/record/getMemberList.ftl</result>
+		</action>
+
+		<action name="getChart1" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getWordList">
+			<result name="success">/pages/record/getChart1.ftl</result>
+		</action>
+
+		<action name="getChart2" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getWordList">
+			<result name="success">/pages/record/getChart2.ftl</result>
+		</action>
+
+		<action name="batchOperation" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="batchOperation">
+			<result name="success">/pages/xzfy/batchOperation.ftl</result>
+		</action>
+		<action name="finishOperation" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="finishOperation">
+			<result name="success">/pages/xzfy/handleUserSuccess.ftl</result>
+		</action>
+		<action name="submitOperation" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="submitOperation">
+			<result name="success">/pages/xzfy/handleUserSuccess.ftl</result>
+		</action>
+		<action name="sendBack" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="sendBack">
+			<result name="success">/pages/xzfy/handleUserSuccess.ftl</result>
+		</action>
+
+		<action name="form2Search" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="form2Search">
+			<result name="success">/pages/record/form2Search.ftl</result>
+		</action>
+
+		<action name="getOrgTree" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getOrgTree">
+			<result name="success">/pages/record/getOrgTree.ftl</result>
+		</action>
+		<action name="getOrgTree1" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getOrgTree1">
+			<result name="success">/pages/record/getOrgTree1.ftl</result>
+		</action>
+		<action name="getOrgTree2" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getOrgTree2">
+			<result name="success">/pages/record/getOrgTree2.ftl</result>
+		</action>
+		<action name="getOrgTree3" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getOrgTree2">
+			<result name="success">/pages/record/getOrgTree3.ftl</result>
+		</action>
+		<action name="getCaiJue" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="getCaiJue">
+			<result name="success">/pages/record/caijue.ftl</result>
+		</action>
+		
+		<!-- 邮单套打 -->
+		<action name="gotoChooseEMSStyle" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="gotoChooseEMSStyle">
+			<result name="success">/pages/EMSPrint/EMSStyleChoose.ftl</result>
+		</action>
+		
+		<action name="styleChoseReaction" class="com.taiji.fzb.webwork.XzfyRecordAction"
+			method="styleChoseReaction">
+			<result name="emsstyle1">/pages/EMSPrint/EMSStyle1.ftl</result>
+			<result name="emsstyle2">/pages/EMSPrint/EMSStyle2.ftl</result>
+		</action>
+		<!-- end -->
+	</package>
+
+
+</xwork>

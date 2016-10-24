@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.xztj.domain">
+<class 
+    name="XztjStat" 
+    table="xztj_stat"
+    dynamic-update="true"
+	dynamic-insert="true"    
+>
+    <id
+        name="id"
+        type="java.lang.String"
+        column="id"
+    >
+        <generator class="assigned" />
+    </id>
+
+   <property
+        name="appFirm"
+        type="java.lang.String"
+        column="appFirm"
+      
+    />	
+    
+    <property
+        name="appDate"
+        type="java.lang.String"
+        column="appDate"
+      
+    />
+    
+    <property
+        name="appPerson"
+        type="java.lang.String"
+        column="appPerson"
+      
+    />
+    
+    <property
+        name="appId"
+        type="java.lang.String"
+        column="appId"
+      
+    />
+    
+    <property
+        name="statYear"
+        type="java.lang.String"
+        column="statYear"
+      
+    />
+    
+    <property
+        name="quarterOfYear"
+        type="java.lang.String"
+        column="quarterOfYear"
+      
+    />
+    
+    <property
+        name="locbm"
+        type="java.lang.String"
+        column="locbm"
+      
+    />
+    
+    <property
+        name="orgId"
+        type="java.lang.String"
+        column="orgId"
+      
+    />
+    
+    <property
+        name="status"
+        type="java.lang.String"
+        column="status"
+      
+    />
+    
+    <property
+        name="auditIdea"
+        type="java.lang.String"
+        column="auditIdea"
+      
+    />
+    
+    <property
+        name="auditPerson"
+        type="java.lang.String"
+        column="auditPerson"
+      
+    />
+    
+    <property
+        name="auditId"
+        type="java.lang.String"
+        column="auditId"
+      
+    />
+    
+    <property
+        name="auditDate"
+        type="java.lang.String"
+        column="auditDate"
+      
+    />
+    
+    <property
+        name="totalOrNot"
+        type="java.lang.String"
+        column="totalOrNot"
+      
+    />
+    
+    <property
+        name="statPerfectOrNot"
+        type="java.lang.String"
+        column="statPerfectOrNot"
+      
+    />
+    
+    <property
+        name="divPerfectOrNot"
+        type="java.lang.String"
+        column="divPerfectOrNot"
+      
+    />
+    
+    <property
+        name="totalCaseCount"
+        type="java.lang.String"
+        column="totalCaseCount"
+      
+    />
+    
+    <property
+        name="tjSuccessCount"
+        type="java.lang.String"
+        column="tjSuccessCount"
+      
+    />
+    
+    <property
+        name="caseInvolvedCount"
+        type="java.lang.String"
+        column="caseInvolvedCount"
+      
+    />
+    
+    <property
+        name="caseInvolvedSum"
+        type="java.lang.String"
+        column="caseInvolvedSum"
+      
+    />
+    
+    <property
+        name="civilQuarrelSum"
+        type="java.lang.String"
+        column="civilQuarrelSum"
+      
+    />
+    
+    <property
+        name="civilQuarrelSuccess"
+        type="java.lang.String"
+        column="civilQuarrelSuccess"
+      
+    />
+    
+    <property
+        name="zatjCivilQuarrel"
+        type="java.lang.String"
+        column="zatjCivilQuarrel"
+      
+    />
+    
+    <property
+        name="travelAccidentQuarrel"
+        type="java.lang.String"
+        column="travelAccidentQuarrel"
+      
+    />
+    
+    <property
+        name="contractQuarrel"
+        type="java.lang.String"
+        column="contractQuarrel"
+      
+    />
+    
+    <property
+        name="medicalQuarrel"
+        type="java.lang.String"
+        column="medicalQuarrel"
+      
+    />
+    
+    <property
+        name="consumerProfitQuarrel"
+        type="java.lang.String"
+        column="consumerProfitQuarrel"
+      
+    />
+    
+    <property
+        name="soilQuarrel"
+        type="java.lang.String"
+        column="soilQuarrel"
+      
+    />
+    
+    <property
+        name="brandRightsQuarrel"
+        type="java.lang.String"
+        column="brandRightsQuarrel"
+      
+    />
+    
+    <property
+        name="environmentPullutionQuarrel"
+        type="java.lang.String"
+        column="environmentPullutionQuarrel"
+      
+    />
+    
+    <property
+        name="powerQuarrel"
+        type="java.lang.String"
+        column="powerQuarrel"
+      
+    />
+    
+    <property
+        name="otherCivilQuarrel"
+        type="java.lang.String"
+        column="otherCivilQuarrel"
+      
+    />
+    
+    <property
+        name="adminQuarrelTotal"
+        type="java.lang.String"
+        column="adminQuarrelTotal"
+      
+    />
+    
+    <property
+        name="adminQuarrelSuccess"
+        type="java.lang.String"
+        column="adminQuarrelSuccess"
+      
+    />
+    
+    <property
+        name="compensateCount"
+        type="java.lang.String"
+        column="compensateCount"
+      
+    />
+    
+    <property
+        name="offsetCount"
+        type="java.lang.String"
+        column="offsetCount"
+      
+    />
+    
+    <property
+        name="legalQuarrel"
+        type="java.lang.String"
+        column="legalQuarrel"
+      
+    />
+    
+    <property
+        name="xzfyCount"
+        type="java.lang.String"
+        column="xzfyCount"
+      
+    />
+    
+    <property
+        name="xzssCount"
+        type="java.lang.String"
+        column="xzssCount"
+      
+    />
+    
+    <property
+        name="writtenProtocol"
+        type="java.lang.String"
+        column="writtenProtocol"
+      
+    />
+    
+    <property
+        name="oralProtocol"
+        type="java.lang.String"
+        column="oralProtocol"
+      
+    />
+    
+    <property
+        name="judicialCofirm"
+        type="java.lang.String"
+        column="judicialCofirm"
+      
+    />
+    
+    <property
+        name="performCount"
+        type="java.lang.String"
+        column="performCount"
+      
+    />
+</class>
+</hibernate-mapping>

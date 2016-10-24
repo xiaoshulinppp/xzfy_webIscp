@@ -1,0 +1,195 @@
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="newUser" extends="default" namespace="/newUser">
+		<default-interceptor-ref name="autowireDefault" />
+		
+		<!-- 获取整个组织树 -->
+		<action name="getOrgTreeAll" class="com.taiji.newUser.action.OrgAction" method="getOrgTreeAll">
+			<result name="success">
+				/pages/newUser/org/orgTree.ftl
+			</result>
+		</action>
+		
+		<!-- 获取整个组织树，其中组织为已启动项 -->
+		<action name="getOrgTreeAllWithState" class="com.taiji.newUser.action.OrgAction" method="getOrgTreeAllWithState">
+			<result name="success">
+				/pages/newUser/org/orgStateTree.ftl
+			</result>
+		</action>
+		
+		<!-- 获取指定ID下的组织树 -->
+		<action name="getOrgTreeById" class="com.taiji.newUser.action.OrgAction" method="getOrgTreeById">
+			<result name="success">
+				/pages/newUser/org/orgTree.ftl
+			</result>
+		</action>
+		
+		<!-- 获取指定ID下的组织树，其中组织为已启动项 -->
+		<action name="getOrgTreeByIdWithState" class="com.taiji.newUser.action.OrgAction" method="getOrgTreeByIdWithState">
+			<result name="success">
+				/pages/newUser/org/orgStateTree.ftl
+			</result>
+		</action>
+		
+		<!-- 获取当前用户所在组织的组织树 -->
+		<action name="getUserOrgTree" class="com.taiji.newUser.action.OrgAction" method="getUserOrgTree">
+			<result name="success">
+				/pages/newUser/org/orgTree.ftl
+			</result>
+		</action>
+		
+		<!-- 获取当前用户所在组织的组织树，其中组织为已启动项 -->
+		<action name="getUserOrgTreeWithState" class="com.taiji.newUser.action.OrgAction" method="getUserOrgTreeWithState">
+			<result name="success">
+				/pages/newUser/org/orgStateTree.ftl
+			</result>
+		</action>
+		
+		<!-- 获取指定节点下的子节点组织树 -->
+		<action name="getChildOrgTree" class="com.taiji.newUser.action.OrgAction" method="getChildOrgTree">
+			<result name="success">
+				/pages/newUser/org/orgTree.ftl
+			</result>
+		</action>
+		
+		<!-- 获取指定节点下的子节点组织树，其中组织为已启动项 -->
+		<action name="getChildOrgTreeWithState" class="com.taiji.newUser.action.OrgAction" method="getChildOrgTreeWithState">
+			<result name="success">
+				/pages/newUser/org/orgStateTree.ftl
+			</result>
+		</action>
+		
+		<!-- 更新组织树节点信息 -->
+		<action name="updateOrgTreeNode" class="com.taiji.newUser.action.OrgAction" method="updateOrgTreeNode">
+			<result name="success">
+				/pages/newUser/org/orgTree.ftl
+			</result>
+		</action>
+		
+		<!-- 删除组织树节点信息 -->
+		<action name="deleteOrgTreeNode" class="com.taiji.newUser.action.OrgAction" method="deleteOrgTreeNode">
+			<result name="success">
+				/pages/newUser/org/orgTree.ftl
+			</result>
+		</action>
+		
+		<!-- 插入新的组织树节点信息 -->
+		<action name="insertOrgTreeNode" class="com.taiji.newUser.action.OrgAction" method="insertOrgTreeNode">
+			<result name="success">
+				/pages/newUser/org/orgTree.ftl
+			</result>
+		</action>
+		
+		<!-- 刷新指定节的子节点 -->
+		<action name="refreshOrgTreeNode" class="com.taiji.newUser.action.OrgAction" method="refreshOrgTreeNode">
+			<result name="success">
+				/pages/newUser/org/orgTree.ftl
+			</result>
+		</action>
+		
+		<!-- 获取子点下子组织列表 -->
+		<action name="getChildOrgList" class="com.taiji.newUser.action.OrgAction" method="getChildOrgList">
+			<result name="success">
+				/pages/newUser/org/orgList.ftl
+			</result>
+		</action>
+		
+		<!-- 进入组织管理页面 -->
+		<action name="gotoOrgFrame" class="com.taiji.newUser.action.OrgAction" method="gotoOrgFrame">
+			<result name="success">
+				/pages/newUser/org/orgFrame.ftl
+			</result>
+		</action>
+		
+		<!-- 获取组织信息 -->
+		<action name="showOrgInfo" class="com.taiji.newUser.action.OrgAction" method="showOrgInfo">
+			<result name="success">
+				/pages/newUser/org/orgInfo.ftl
+			</result>
+			<result name="welcome">
+				/pages/common/welcome.ftl
+			</result>
+		</action>
+		
+		<!-- 更新组织信息 -->
+		<action name="updateOrgInfo" class="com.taiji.newUser.action.OrgAction" method="updateOrgInfo">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 删除组织信息 -->
+		<action name="deleteOrgInfo" class="com.taiji.newUser.action.OrgAction" method="deleteOrgInfo">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 批量删除组织信息 -->
+		<action name="deleteOrgBatch" class="com.taiji.newUser.action.OrgAction" method="deleteOrgBatch">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 进入创建组织子项页面 -->
+		<action name="gotoCreateChildOrg" class="com.taiji.newUser.action.OrgAction" method="gotoCreateChildOrg">
+			<result name="success">
+				/pages/newUser/org/orgCreate.ftl
+			</result>
+		</action>
+		
+		<!-- 创建组织子项 -->
+		<action name="createChildOrg" class="com.taiji.newUser.action.OrgAction" method="createChildOrg">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 进入用户管理页面 -->
+		<action name="gotoUserFrame" class="com.taiji.newUser.action.UserAction" method="gotoUserFrame">
+			<result name="success">
+				/pages/newUser/user/userFrame.ftl
+			</result>
+		</action>
+		
+		<!-- 获取用户列表 -->
+		<action name="getUserInfoList" class="com.taiji.newUser.action.UserAction" method="getUserInfoList">
+			<result name="success">
+				/pages/newUser/user/userList.ftl
+			</result>
+		</action>
+		
+		<!-- 进入新增用户页面 -->
+		<action name="gotoCreateUser" class="com.taiji.newUser.action.UserAction" method="gotoCreateUser">
+			<result name="success">
+				/pages/newUser/user/userCreate.ftl
+			</result>
+		</action>
+		
+		<!-- 创建用户 -->
+		<action name="createUser" class="com.taiji.newUser.action.UserAction" method="createUser">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+		</action>
+		
+		<!-- 删除用户 -->
+		<action name="deleteUser" class="com.taiji.newUser.action.UserAction" method="deleteUser">
+			<result name="success">
+				/pages/common/success.ftl
+			</result>
+			<result name="fail">
+				/pages/common/error.ftl
+			</result>
+		</action>
+		
+		<!-- 进入用户更改页面 -->
+		<action name="gotoUpdateUser" class="com.taiji.newUser.action.UserAction" method="gotoUpdateUser">
+			<result name="success">
+				/pages/newUser/user/userUpdate.ftl
+			</result>
+		</action>
+		
+	</package>
+</xwork>

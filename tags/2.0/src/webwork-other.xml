@@ -1,0 +1,20 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="other" extends="default" namespace="/other">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<!--   提交补正审批 -->
+		<action name="tijiaoShenpi" class="com.taiji.fzb.webwork.XzfyOtherAction"
+			method="tijiaoShenpi">
+		</action>
+		<!--   完成补正审批 -->
+		<action name="wanchengShenpi" class="com.taiji.fzb.webwork.XzfyOtherAction"
+			method="wanchengShenpi">
+		</action>
+	</package>
+
+
+</xwork>

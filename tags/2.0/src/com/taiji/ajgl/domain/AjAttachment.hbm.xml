@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.taiji.ajgl.domain">
+ <class dynamic-insert="true" dynamic-update="true" name="AjAttachment" table="AJATTACHMENT">
+  <id column="id" name="id" type="java.lang.String">
+   <generator class="assigned"/>
+  </id>
+  <property column="xzfyId" generated="never" lazy="false" name="xzfyId" type="java.lang.String"/>
+  <property column="fileName" generated="never" lazy="false"
+   name="fileName" type="java.lang.String"/>
+  <property column="realFilePath" generated="never" lazy="false"
+   name="realFilePath" type="java.lang.String"/>
+  <property column="filePath" generated="never" lazy="false"
+   name="filePath" type="java.lang.String"/>
+  <property column="uploadDate" generated="never" lazy="false"
+   name="uploadDate" type="java.lang.String"/>
+  <property
+  	name="inputFileName"
+  	type="java.lang.String"
+  	column="INPUTFILENAME"
+  />
+ </class>
+</hibernate-mapping>

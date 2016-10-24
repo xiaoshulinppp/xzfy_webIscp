@@ -1,0 +1,34 @@
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="schedule" extends="default" namespace="/schedule">
+	<action name="showScheduleList" class="com.taiji.schedule.webwork.ScheduleDetailAction"
+		method="showScheduleList">
+		<result name="success">/pages/schedule/showScheduleList.ftl</result>	
+	</action>
+	<action name="gotoCreate" class="com.taiji.schedule.webwork.ScheduleDetailAction"
+		method="gotoCreate">
+		<result name="success">/pages/schedule/gotoCreate.ftl</result>	
+	</action>
+	<action name="saveSchedule" class="com.taiji.schedule.webwork.ScheduleDetailAction"
+		method="saveSchedule">
+		<result name="success" type="chain">
+		<param name="actionName">showScheduleList</param>
+		</result>	
+	</action>
+	<action name="deleteSchedule" class="com.taiji.schedule.webwork.ScheduleDetailAction"
+		method="deleteSchedule">
+		<result name="success" type="chain">
+		<param name="actionName">showScheduleList</param>
+		</result>	
+	</action>
+	<action name="modifySchedule" class="com.taiji.schedule.webwork.ScheduleDetailAction"
+		method="showSchedule">
+		<result name="success">/pages/schedule/modifySchedule.ftl</result>	
+	</action>
+	<action name="showSchedule" class="com.taiji.schedule.webwork.ScheduleDetailAction"
+		method="showSchedule">
+		<result name="success">/pages/schedule/showSchedule.ftl</result>	
+	</action>
+
+	</package>
+</xwork>

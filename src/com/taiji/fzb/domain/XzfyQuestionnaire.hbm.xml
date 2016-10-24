@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.fzb.domain">
+<class 
+    name="XzfyQuestionnaire" 
+    table="xzfy_questionnaire"
+    dynamic-update="true"
+	dynamic-insert="true"    
+>
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="id"
+    >
+        <generator class="increment" />
+    </id>
+
+   <property
+        name="name"
+        type="java.lang.String"
+        column="name"
+      
+    />	
+    
+    <property
+        name="selectValue"
+        type="java.lang.String"
+        column="select_value"
+
+    />
+    <property
+        name="commitDate"
+        type="java.lang.String"
+        column="commit_date"
+
+    />
+			
+</class>
+</hibernate-mapping>

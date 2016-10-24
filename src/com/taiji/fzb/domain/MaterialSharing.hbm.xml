@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.taiji.fzb.domain">
+	<class name="MaterialSharing" table="XZFY_SHARING">
+	<id name="id" type="java.lang.Integer" column="ID">
+		<generator class="increment" />
+	</id>
+	
+	<property name="name" type="java.lang.String" column="NAME" />
+	<property name="summary" type="java.lang.String" column="SUMMARY" />
+	<property name="isshare" type="java.lang.String" column="ISSHARE" />
+	<property name="filepath" type="java.lang.String" column="FILEPATH" />
+	<property name="userid" type="java.lang.String" column="USERID" />
+	<property name="username" type="java.lang.String" column="USERNAME" />
+	<property name="locbm" type="java.lang.String" column="LOCBM" />
+	<property name="superdepartment" type="java.lang.String" column="SUPERDEPARTMENT" />
+	<property name="count" type="java.lang.String" column="COUNT" />
+	<property name="keyword" type="java.lang.String" column="KEYWORD" />
+	<property name="uploadingdate" type="java.lang.String" column="UPLOADINGDATE" />
+	<property name="category1" type="java.lang.String" column="CATEGORY1" />
+	<property name="category2" type="java.lang.String" column="CATEGORY2" />
+	
+	</class>
+
+</hibernate-mapping>

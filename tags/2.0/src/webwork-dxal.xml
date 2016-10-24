@@ -1,0 +1,70 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="dxal" extends="default" namespace="/dxal">
+		<default-interceptor-ref name="autowireDefault" />
+	
+		<action name="dxal_Submit" class="com.taiji.fzb.webwork.DxalDetailAction"
+			method="gotoCreate">
+			<result name="success">/pages/dxal/Dxal_Submit.ftl</result>
+		</action>
+		<action name="dxal_List" class="com.taiji.fzb.webwork.DxalDetailAction"
+			method="showDxalList">
+			<result name="success">/pages/dxal/Dxal_List.ftl</result>
+		</action>
+		<action name="dxal_Search" class="com.taiji.fzb.webwork.DxalDetailAction"
+			method="gotoSearch">
+			<result name="success">/pages/dxal/Dxal_Search.ftl</result>
+		</action>
+		<action name="dxal_Save" class="com.taiji.fzb.webwork.DxalDetailAction"
+			method="savaDxalInfo">
+			<result name="success">/pages/dxal/success.ftl</result>
+		</action>
+		<action name="dxal_Detail" class="com.taiji.fzb.webwork.DxalDetailAction"
+			method="showDxal">
+			<result name="success">/pages/dxal/Dxal_Detail.ftl</result>
+		</action>
+		<action name="dxal_Detail1" class="com.taiji.fzb.webwork.DxalDetailAction"
+			method="backToDxal">
+			<result name="success">/pages/dxal/Dxal_Detail.ftl</result>
+		</action><!-- 评论成功后返回该页面 -->
+
+		<action name="dxal_Setup" class="com.taiji.fzb.webwork.DxalDetailAction"
+			method="showSetupList">
+			<result name="success">/pages/dxal/Dxal_List_Setup.ftl</result>
+		</action>
+		<action name="dxal_SearchList" class="com.taiji.fzb.webwork.DxalDetailAction"
+			method="showSearchList">
+			<result name="success">/pages/dxal/Dxal_List_search.ftl</result>
+		</action>
+		<action name="dxal_SubmitComment" class="com.taiji.fzb.webwork.DxalDetailAction"
+		   method="saveDxalComment">
+		   <result name="success">/pages/dxal/add_comment.ftl</result>
+		  <!--   <result  name="success"  type="chain">
+				<param name="actionName">dxal_Detail</param>
+			</result>   -->  
+		</action>
+		<action name="dxal_ViewSetup" class="com.taiji.fzb.webwork.DxalDetailAction" 
+		   method="backToDxal">
+		   <result name="success">/pages/dxal/Dxal_ViewSetup.ftl</result>
+		   </action>
+		<action name="dxal_Setupdate" class="com.taiji.fzb.webwork.DxalDetailAction" 
+		   method="backToDxal">
+		   <result name="success">/pages/dxal/Dxal_Setup.ftl</result>
+		</action>
+		<action name="dxal_Update" class="com.taiji.fzb.webwork.DxalDetailAction"
+		   method="updateInfo">
+		   <result name="success">/pages/dxal/success.ftl</result>
+		</action>
+		<action name="deleteDxalInfo" class="com.taiji.fzb.webwork.DxalDetailAction"
+		  method="deleteDxalInfo">
+		   <result name="success" type="chain">
+		   <param name="actionName">dxal_List</param>
+		   </result>
+		 </action>
+	</package>
+
+
+</xwork>

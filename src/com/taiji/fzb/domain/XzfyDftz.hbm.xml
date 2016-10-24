@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.taiji.fzb.domain">
+    <class name="XzfyDftz" table="XZFY_DFTZ" >
+    
+    <id name="id"  type="java.lang.Integer" column="id">
+    	<generator class="increment"/>
+    </id>
+    		<property name="xzfy_id" type="java.lang.String">
+                <column name="XZFY_ID" length="100" />
+            </property>
+    		<property name="sentanswerdate" type="java.lang.String">
+                <column name="SENTANSWERDATE" length="100" />
+            </property>
+            
+            <property name="receiveanswerdate" type="java.lang.String">
+                <column name="RECEIVEANSWERDATE" length="100" />
+            </property>
+           
+            <property name="status" type="java.lang.String">
+                <column name="STATUS" length="100" />
+            </property>
+            
+            <property name="fujian1" type="java.lang.String">
+                <column name="FUJIAN1" length="100" />
+            </property>
+            
+            <property name="fujian11" type="java.lang.String">
+                <column name="FUJIAN11" length="100" />
+            </property>
+            
+            <property name="fujian2" type="java.lang.String">
+                <column name="FUJIAN2" length="100" />
+            </property>
+            
+            <property name="fujian22" type="java.lang.String">
+                <column name="FUJIAN22" length="100" />
+            </property>
+          
+            <property name="fujian3" type="java.lang.String">
+                <column name="FUJIAN3" length="100" />
+            </property>
+            
+            <property name="fujian33" type="java.lang.String">
+                <column name="FUJIAN33" length="100" />
+            </property>
+            
+            <property name="fujian4" type="java.lang.String">
+                <column name="FUJIAN4" length="100" />
+            </property>
+            
+            <property name="fujian44" type="java.lang.String">
+                <column name="FUJIAN44" length="100" />
+            </property>
+            
+            <property name="fujian5" type="java.lang.String">
+                <column name="FUJIAN5" length="100" />
+            </property>
+            
+            <property name="fujian55" type="java.lang.String">
+                <column name="FUJIAN55" length="100" />
+            </property>
+            
+            <property name="content" type="java.lang.String">
+                <column name="CONTENT" length="1000" />
+            </property>
+            
+            <property name="content1" type="java.lang.String">
+                <column name="CONTENT1" length="1000" />
+            </property>
+            <property name="userName1" type="java.lang.String">
+                <column name="userName1"/>
+            </property>
+            <property name="userName2" type="java.lang.String">
+                <column name="userName2" />
+            </property>
+            <property name="fasongdanwei1" type="java.lang.String">
+                <column name="fasongdanwei1" />
+            </property>
+            <property name="fasongdanwei2" type="java.lang.String">
+                <column name="fasongdanwei2" />
+            </property>
+            <property name="fasongdanwei3" type="java.lang.String">
+                <column name="fasongdanwei3" />
+            </property>
+            <property name="fasongdanwei4" type="java.lang.String">
+                <column name="fasongdanwei4" />
+            </property>
+            <property name="fasongren1" type="java.lang.String">
+                <column name="fasongren1" />
+            </property>
+            <property name="fasongren1Name" type="java.lang.String">
+                <column name="fasongren1Name" />
+            </property>
+            <property name="fasongren2" type="java.lang.String">
+                <column name="fasongren2" />
+            </property>
+            <property name="fasongren2Name" type="java.lang.String">
+                <column name="fasongren2Name" />
+            </property>
+            <property name="fasongren3" type="java.lang.String">
+                <column name="fasongren3" />
+            </property>
+            <property name="fasongren3Name" type="java.lang.String">
+                <column name="fasongren3Name" />
+            </property>
+            <property name="fasongren4" type="java.lang.String">
+                <column name="fasongren4" />
+            </property>
+            <property name="fasongren4Name" type="java.lang.String">
+                <column name="fasongren4Name" />
+            </property>
+            
+        
+		    <!--<many-to-one name="xzfyInfo" cascade="all"
+			column="xzfy_id" class="XzfyInfo"  />
+    		-->
+    		
+    </class>
+</hibernate-mapping>

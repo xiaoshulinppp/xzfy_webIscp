@@ -1,0 +1,60 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="wyxx" extends="default" namespace="/wyxx">
+		<default-interceptor-ref name="autowireDefault" />
+
+	    <!--  
+		<action name="gotoCreate" class="com.taiji.fzb.webwork.RddbAction"
+			method="gotoCreate">
+			<result name="success">/pages/rddb/addjie.ftl</result>
+		</action>
+		
+		<action name="saveTerm" class="com.taiji.fzb.webwork.RddbAction"
+			method="saveTerm">
+			<result name="success">/pages/rddb/success.ftl</result>
+		</action>
+		
+		<action name="showTermList" class="com.taiji.fzb.webwork.RddbAction"
+			method="showTermList">
+			<result name="success">/pages/rddb/term_list.ftl</result>
+		</action>
+		-->
+		
+		<action name="showMemList" class="com.taiji.fzb.webwork.ComAction"
+			method="showMemList">
+			<result name="success">/pages/wyxx/committee_list.ftl</result>
+		</action>
+		
+		
+		<action name="createNewComt" class="com.taiji.fzb.webwork.ComAction"
+			method="createNewComt">
+			<result name="success">/pages/wyxx/create_new_comt.ftl</result>
+		</action>
+		
+		<action name="saveNewComt" class="com.taiji.fzb.webwork.ComAction"
+			method="saveNewComt">
+			<result name="success">/pages/wyxx/addCommittee.ftl</result>
+		</action>
+		
+		<action name="deleteComt" class="com.taiji.fzb.webwork.ComAction"
+			method="deleteComt">
+			<result name="success">/pages/wyxx/deleteComt.ftl</result>
+		</action>
+		
+		<action name="updateComt" class="com.taiji.fzb.webwork.ComAction"
+			method="updateComt">
+			<result name="success">/pages/wyxx/updateComt.ftl</result>
+		</action>
+		
+		<action name="updateCommittee" class="com.taiji.fzb.webwork.ComAction"
+			method="updateCommittee">
+			<result name="success">/pages/wyxx/updateSuccess.ftl</result>
+		</action>
+		
+	</package>
+
+
+</xwork>

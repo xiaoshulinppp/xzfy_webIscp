@@ -1,0 +1,23 @@
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="tongJi" extends="default" namespace="/tongJi">
+		<default-interceptor-ref name="autowireDefault" />
+		<action name="tongJi" class="com.taiji.tongJi.action.TongJiAction" method="tongJi">
+			<result name="success_jieDaiTongJiByWeek">/pages/tongJi/jieDaiTongJiByWeek.ftl</result>
+			<result name="success_liAnShenChaTongJiByWeek">/pages/tongJi/liAnShenChaTongJiByWeek.ftl</result>
+			<result name="success_weiShouLiYuanYinTongJi">/pages/tongJi/weiShouLiYuanYinTongJi.ftl</result>
+		</action>
+		<action name="dianHuaBen" class="com.taiji.tongJi.action.TongJiAction" method="dianHuaBen">
+			<result name="success">/pages/tongJi/dianHuaBenFrame.ftl</result>
+		</action>
+		<action name="showOrgUserTree" class="com.taiji.tongJi.action.TongJiAction" method="initTree">
+			<result name="success">/pages/tongJi/orgUserTree.ftl</result>
+		</action>
+		<action name="showOrgServer" class="com.taiji.user.webwork.action.OrgAction" method="list">
+			<result name="success">/pages/user/orgServer.ftl</result>
+		</action>
+		<action name="listUser" class="com.taiji.tongJi.action.TongJiAction" method="listUser">
+			<result name="success">/pages/tongJi/listUser.ftl</result>
+		</action>
+	</package>
+</xwork>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.fzb.domain">
+
+
+<class 
+    name="Term" 
+    table="TERM"
+>
+
+    <id
+        name="termId" type="java.lang.String"
+        column="term_id" >
+          <generator class="assigned" />
+      </id>
+  
+    <property
+        name="currentTermNo"
+        type="java.lang.String"
+        column="current_term_no"
+        length="20"
+    />
+    <property
+        name="createTime"
+        type="java.lang.String"
+        column="create_time"
+    />
+
+ 	<set name="comts"   inverse="true" cascade="all" lazy="false">
+	   <key column="term_id" />
+	   <one-to-many class="Committee"/>
+	</set>
+  
+
+</class>
+</hibernate-mapping>

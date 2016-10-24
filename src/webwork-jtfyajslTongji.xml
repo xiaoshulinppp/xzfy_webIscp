@@ -1,0 +1,36 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="jtfyajslTongji" extends="default" namespace="/tongJi">
+		<default-interceptor-ref name="autowireDefault" />
+		<action name="jtfyajslTongji" class="com.taiji.fzb.webwork.JtfyajslTongjiDetailAction"
+			method="jtfyajslTongji">
+			<result name="success">/pages/tongji/jtfyajslTongji.ftl</result>
+		</action>
+		<action name="searchDataList" class="com.taiji.fzb.webwork.JtfyajslTongjiDetailAction"
+			method="searchDataList">
+			<result name="success">/pages/tongji/searchDataList.ftl</result>
+		</action>
+		<action name="xzfyInfoList" class="com.taiji.fzb.webwork.JtfyajslTongjiDetailAction"
+			method="xzfyInfoList">
+			<result name="success">/pages/tongji/xzfyInfoList.ftl</result>
+		</action>
+		<action name="enterMoKuai4" class="com.taiji.fzb.webwork.JtfyajslTongjiDetailAction"
+			method="enterMoKuai4">
+			<result name="success">/pages/tongji/enterMoKuai4.ftl</result>
+		</action>
+		<action name="tongJiMoKuai4" class="com.taiji.fzb.webwork.JtfyajslTongjiDetailAction"
+			method="tongJiMoKuai4">
+			<result name="tongji_form15_success">/pages/tongji/tongji_form15_success.ftl</result>
+			<result name="tongji_form17_success">/pages/tongji/tongji_form17_success.ftl</result>
+			<result name="tongji_form19_success">/pages/tongji/tongji_form19_success.ftl</result>
+		</action>
+		
+		<action name="form23sfjstxjaxxjk" class="com.taiji.fzb.webwork.JtfyajslTongjiDetailAction"
+			method="form23sfjstxjaxxjk">
+			<result name="success">/pages/indexTj/detailChart.ftl</result>
+		</action>
+	</package>
+</xwork>

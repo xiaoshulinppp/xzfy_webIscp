@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.taiji.fzb.domain">
+
+
+	<class name="XzfyBuwei" table="xzfy_buwei">
+
+		<id name="id" type="java.lang.String" column="ID">
+			<generator class="assigned" />
+		</id>
+
+		<property name="receiveDate" type="java.lang.String" column="RECEIVE_DATE"/>
+			
+		<property name="appType" type="java.lang.String" column="APP_TYPE"/>
+		
+		<property name="appDetail" type="java.lang.String" column="APP_DETAIL"/>
+		<property name="agentDetail" type="java.lang.String" column="AGENT_DETAIL"/>
+		<property name="xwName" type="java.lang.String" column="XW_NAME"/>
+		<property name="xwNum" type="java.lang.String" column="XW_NUM"/>
+		<property name="xzfyRequest" type="java.lang.String" column="XZFY_REQUSET"/>
+		<property name="refer" type="java.lang.String" column="REFER"/>
+		<property name="keyWord" type="java.lang.String" column="KEYWORD"/>
+		<property name="endDate" type="java.lang.String" column="END_DATE"/>
+		<property name="finishType" type="java.lang.String" column="FINISH_TYPE"/>
+		<property name="finishBreakType" type="java.lang.String" column="FINISH_BREAK_TYPE"/>
+		<property name="userId" type="java.lang.String" column="USER_ID"/>
+		<property name="userName" type="java.lang.String" column="USER_NAME"/>
+		<property name="localBm" type="java.lang.String" column="LOCAL_BM"/>
+		<property name="orgName" type="java.lang.String" column="ORG_NAME"/>
+		<property name="status" type="java.lang.String" column="STATUS"/>
+		<property name="shouLiJiGuan" type="java.lang.String" column="SHOULIJIGUAN"/>
+		<property name="fileName0" type="java.lang.String" column="FILE_NAME0"/>
+		<property name="storedName0" type="java.lang.String" column="STORED_NAME0"/>
+		<property name="storedLocation0" type="java.lang.String" column="STORED_LOCATION0"/>
+		<property name="fileName1" type="java.lang.String" column="FILE_NAME1"/>
+		<property name="storedName1" type="java.lang.String" column="STORED_NAME1"/>
+		<property name="storedLocation1" type="java.lang.String" column="STORED_LOCATION1"/>
+		<property name="fileName2" type="java.lang.String" column="FILE_NAME2"/>
+		<property name="storedName2" type="java.lang.String" column="STORED_NAME2"/>
+		<property name="storedLocation2" type="java.lang.String" column="STORED_LOCATION2"/>
+	
+	</class>
+</hibernate-mapping>

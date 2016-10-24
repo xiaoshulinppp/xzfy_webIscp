@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.fzb.domain">
+
+
+<class 
+    name="XzssLog" 
+    table="xzss_log"
+
+>
+
+    <id name="id"  type="java.lang.Integer" column="id">
+    	<generator class="increment"/>
+    </id>
+  
+    <property
+        name="log_info"
+        type="java.lang.String"
+        column="LOG_INFO"
+        length="2000"
+    />
+   
+    <property
+        name="log_time"
+        type="java.lang.String"
+        column="LOG_TIME"
+        length="20"
+    />
+    
+    
+    <property
+        name="xzssId"
+        type="java.lang.String"
+        column="XZSS_ID"
+        length="30"
+    />    
+    <property
+        name="update_name"
+        type="java.lang.String"
+        column="UPDATE_NAME"
+        length="2000"
+    />
+  
+</class>
+</hibernate-mapping>

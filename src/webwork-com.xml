@@ -1,0 +1,127 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="wyxx" extends="default" namespace="/wyxx">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="showMemList" class="com.taiji.fzb.webwork.ComAction"
+			method="showMemList">
+			<result name="success">/pages/wyxx/committee_list.ftl</result>
+		</action>
+		
+		
+		<action name="createNewComt" class="com.taiji.fzb.webwork.ComAction"
+			method="createNewComt">
+			<result name="success">/pages/wyxx/create_new_comt.ftl</result>
+		</action>
+	
+		<!-- 查看当前单位系统维护信息 -->
+		<action name="showCorpInfo" class="com.taiji.fzb.webwork.ComAction"
+			method="showCorpInfo">
+			<result name="success">/pages/wyxx/show_corp_info.ftl</result>
+		</action>
+				
+		<action name="showImprovment" class="com.taiji.fzb.webwork.ComAction"
+			method="showImprovment">
+			<result name="success">/pages/wyxx/show_improvment.ftl</result>
+		</action>
+		
+		<action name="gotoSaveInfo" class="com.taiji.fzb.webwork.ComAction"
+			method="gotoSaveInfo">
+			<result name="success">/pages/wyxx/save_info.ftl</result>
+		</action>
+		
+		<!-- 全市所有单位列表隔离带 -->
+		
+		<action name="gotoCompaniesIndex" class="com.taiji.fzb.webwork.ComAction"
+			method="gotoCompaniesIndex">
+			<result name="success">/pages/wyxx/allCompanyListFrame.ftl</result>
+		</action>
+		
+		<action name="gotoAllCompanyList" class="com.taiji.fzb.webwork.ComAction"
+			method="gotoAllCompanyList">
+			<result name="success">/pages/wyxx/allCompanyList.ftl</result>
+		</action>
+		
+		<!-- 查看指定单位系统维护信息 -->
+		<action name="viewCompanyDetail" class="com.taiji.fzb.webwork.ComAction"
+			method="viewCompanyDetail">
+			<result name="success">/pages/wyxx/show_corp_info.ftl</result>
+		</action>
+		
+		<!-- 结束隔离带 -->
+		
+		<action name="saveKeyword" class="com.taiji.fzb.webwork.ComAction"
+			method="saveKeyword">
+			<result  name="success"  type="chain">
+				<param name="actionName">showImprovment</param>
+			</result>
+		</action>
+		
+		<action name="deleteKeyword" class="com.taiji.fzb.webwork.ComAction"
+			method="deleteKeyword">
+			<result  name="success"  type="chain">
+				<param name="actionName">showImprovment</param>
+			</result>
+		</action>
+		
+		<action name="saveNewComt" class="com.taiji.fzb.webwork.ComAction"
+			method="saveNewComt">
+			<result name="success">/pages/wyxx/addCommittee.ftl</result>
+		</action>
+		
+		<action name="deleteComt" class="com.taiji.fzb.webwork.ComAction"
+			method="deleteComt">
+			<result name="success">/pages/wyxx/deleteComt.ftl</result>
+		</action>
+		
+		<action name="updateComt" class="com.taiji.fzb.webwork.ComAction"
+			method="updateComt">
+			<result name="success">/pages/wyxx/updateComt.ftl</result>
+		</action>
+		
+		<action name="updateCommittee" class="com.taiji.fzb.webwork.ComAction"
+			method="updateCommittee">
+			<result name="success">/pages/wyxx/updateSuccess.ftl</result>
+		</action>
+		
+		<!--隔离带-->
+		<action name="showQustnPage" class="com.taiji.fzb.webwork.ComAction"
+			method="showQustnPage">
+			<result name="success">/pages/wyxx/show_qustnPage.ftl</result>
+		</action>
+		
+		<action name="saveQustnResult" class="com.taiji.fzb.webwork.ComAction"
+			method="saveQustnResult">
+			<result name="success">/pages/wyxx/save_qustn_success.ftl</result>
+		</action>
+		
+		<action name="saveOtherSuggResult" class="com.taiji.fzb.webwork.ComAction"
+			method="saveOtherSuggResult">
+			<result name="success">/pages/wyxx/save_qustn_success.ftl</result>
+		</action>
+		
+		<action name="showPieChart" class="com.taiji.fzb.webwork.ComAction"
+			method="showPieChart">
+			<result name="success">/pages/wyxx/show_chart.ftl</result>
+		</action>
+		
+		<action name="showOtherStatis" class="com.taiji.fzb.webwork.ComAction"
+			method="showOtherStatis">
+			<result name="success">/pages/wyxx/show_other_Statis.ftl</result>
+		</action>
+		<action name="viewDetail" class="com.taiji.fzb.webwork.ComAction"
+			method="viewDetail">
+			<result name="success">/pages/wyxx/viewDetail.ftl</result>
+		</action>
+		<action name="saveReply" class="com.taiji.fzb.webwork.ComAction"
+			method="saveReply">
+			<result name="success">/pages/wyxx/saveReply.ftl</result>
+		</action>
+		<!--隔离带-->
+	</package>
+
+
+</xwork>

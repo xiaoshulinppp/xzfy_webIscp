@@ -1,0 +1,41 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="datum" extends="default" namespace="/datum">
+		<default-interceptor-ref name="autowireDefault" />
+
+		<action name="gotoPersonalList" class="com.taiji.datum.action.DatumListAction" method="gotoPersonalList">
+			<result name="success">/pages/datum/list_personalDatum.ftl</result>
+		</action>
+		
+		<action name="gotoPublicList" class="com.taiji.datum.action.DatumListAction" method="gotoPublicList">
+			<result name="success">/pages/datum/list_publicDatum.ftl</result>
+		</action>
+
+		<action name="gotoInsertDatum" class="com.taiji.datum.action.DatumDetailAction" method="gotoInsertDatum">
+			<result name="success">/pages/datum/detail_insertDatum.ftl</result>
+		</action>
+		
+		<action name="insertDatum" class="com.taiji.datum.action.DatumDetailAction" method="insertDatum">
+			<interceptor-ref name="autowireupload" />
+			<result type="redirect" name="success">../datum/gotoPersonalList.action?funcCode=${funcCode}</result>
+		</action>
+		
+		<action name="shareData" class="com.taiji.datum.action.DatumDetailAction" method="shareData">
+			<result type="redirect" name="success">../datum/gotoPersonalList.action?funcCode=${funcCode}</result>
+		</action>
+		
+		<action name="deleteData" class="com.taiji.datum.action.DatumDetailAction" method="deleteData">
+			<result type="redirect" name="success">../datum/gotoPersonalList.action?funcCode=${funcCode}</result>
+		</action>
+		
+		<action name="viewData" class="com.taiji.datum.action.DatumDetailAction" method="viewData">
+			<result name="success">/pages/datum/detail_viewDatum.ftl</result>
+		</action>
+			
+	</package>
+
+
+</xwork>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.fzb.domain">
+<class 
+    name="XzfyOtherSuggest" 
+    table="xzfy_other_suggest"
+    dynamic-update="true"
+	dynamic-insert="true"    
+>
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="id"
+    >
+        <generator class="increment" />
+    </id>
+
+   <property
+        name="fullName"
+        type="java.lang.String"
+        column="full_name"
+      
+    />	
+    
+    <property
+        name="opinion"
+        type="java.lang.String"
+        column="opinion"
+
+    />
+    <property
+        name="submitTime"
+        type="java.lang.String"
+        column="submit_time"
+
+    />
+    <property
+        name="parentId"
+        type="java.lang.Integer"
+        column="parentId"
+    />
+			
+</class>
+</hibernate-mapping>

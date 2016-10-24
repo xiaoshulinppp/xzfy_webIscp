@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.taiji.app.webTemplate.news.domain.NewsTemplate" table="WT_TEMPLATE_NEWS">
+		<id name="id" type="java.lang.Integer">
+			<column name="WT_ID" precision="22" scale="0" />
+			<generator class="increment" />
+		</id>
+		
+		<property name="title" type="java.lang.String">
+			<column name="WT_TITLE" length="2000" />
+		</property>
+		
+		<property name="source" type="java.lang.String">
+			<column name="WT_SOURCE" length="2000" />
+		</property>
+		
+		<property name="editor" type="java.lang.String">
+			<column name="WT_EDITOR" length="2000" />
+		</property>
+		
+		<property name="author" type="java.lang.String">
+			<column name="WT_AUTHOR" length="2000" />
+		</property>
+		
+		<property name="date" type="java.lang.String">
+			<column name="WT_DATE" length="200" />
+		</property>
+		
+		<property name="time" type="java.lang.String">
+			<column name="WT_TIME" length="200" />
+		</property>
+		
+		<property name="dateTime" type="java.lang.String">
+			<column name="WT_DATETIME" length="200" />
+		</property>
+		
+		<property name="filePath" type="java.lang.String">
+			<column name="WT_FILEPATH" length="2000" />
+		</property>
+		
+		<property name="fileName" type="java.lang.String">
+			<column name="WT_FILENAME" length="2000" />
+		</property>
+		
+		<property name="fileFlod" type="java.lang.String">
+			<column name="WT_FILEFLOD" length="2000" />
+		</property>
+		
+		<property name="imagePath" type="java.lang.String">
+			<column name="WT_IMAGEPATH" length="2000" />
+		</property>
+		
+		<property name="imageName" type="java.lang.String">
+			<column name="WT_IMAGENAME" length="2000" />
+		</property>
+		
+		<property name="imageFlod" type="java.lang.String">
+			<column name="WT_IMAGEFLOD" length="2000" />
+		</property>
+		
+		<property name="content" type="org.springframework.orm.hibernate3.support.ClobStringType" lazy="true" length="1048576000">
+			<column name="WT_CONTENT" />
+		</property>
+		
+		<property name="introduction" type="org.springframework.orm.hibernate3.support.ClobStringType" lazy="true" length="1048576000">
+			<column name="WT_INTRODUCTION" />
+		</property>
+		
+		<property name="stick" type="java.lang.Integer">
+			<column name="WT_STICK" />
+		</property>
+		
+		<property name="report" type="java.lang.Integer">
+			<column name="WT_REPORT" />
+		</property>
+		
+		<property name="audit" type="java.lang.Integer">
+			<column name="WT_AUDIT" />
+		</property>
+		
+		<property name="release" type="java.lang.Integer">
+			<column name="WT_RELEASE" />
+		</property>
+		
+		<property name="delete" type="java.lang.Integer">
+			<column name="WT_DELETE" />
+		</property>
+		
+		<property name="remarks" type="java.lang.String">
+			<column name="WT_REMARKS" length="2000" />
+		</property>
+		
+		<property name="state" type="java.lang.String">
+			<column name="WT_STATE" length="200" />
+		</property>
+		
+		<property name="power" type="java.lang.String">
+			<column name="WT_POWER" length="200" />
+		</property>
+		
+		<property name="stickDateTime" type="java.lang.String">
+			<column name="WT_STICK_DATETIME" length="200" />
+		</property>
+		
+		<property name="reportDateTime" type="java.lang.String">
+			<column name="WT_REPORT_DATETIME" length="200" />
+		</property>
+		
+		<property name="auditDateTime" type="java.lang.String">
+			<column name="WT_AUDIT_DATETIME" length="200" />
+		</property>
+		
+		<property name="releaseDateTime" type="java.lang.String">
+			<column name="WT_RELEASE_DATETIME" length="200" />
+		</property>
+		
+		<property name="deleteDateTime" type="java.lang.String">
+			<column name="WT_DELETE_DATETIME" length="200" />
+		</property>
+		
+		<property name="updateDateTime" type="java.lang.String">
+			<column name="WT_UPDATE_DATETIME" length="200" />
+		</property>
+		
+		<many-to-one name="classify" class="com.taiji.webTemplate.domain.WtClassify" insert="true" update="true" not-null="true">
+			<column name="WT_CLASSIFY_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

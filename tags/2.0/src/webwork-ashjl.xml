@@ -1,0 +1,32 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="ashjl" extends="default" namespace="/ashjl">
+		<default-interceptor-ref name="autowireDefault" />
+	
+		<action name="generateXzfyId" class="com.taiji.ashjl.webwork.AshjlDetailAction"
+			method="generateXzfyId">
+			<result name="success">/pages/ashjl/generateXzfyId.ftl</result>
+		</action>
+		<action name="showAshjlList" class="com.taiji.ashjl.webwork.AshjlDetailAction"
+			method="showAshjlList">
+			<result name="success">/pages/ashjl/showAshjlList.ftl</result>
+		</action>
+		<action name="addAshjl" class="com.taiji.ashjl.webwork.AshjlDetailAction"
+			method="addAshjl">
+			<result name="success">/pages/ashjl/addAshjl.ftl</result>
+		</action>
+		<action name="saveAshjl" class="com.taiji.ashjl.webwork.AshjlDetailAction"
+			method="saveAshjl">
+			<result name="success" type="chain">
+			<param name="actionName">showAshjlList</param>
+			</result>	
+		</action>
+		<action name="modifyAshjl" class="com.taiji.ashjl.webwork.AshjlDetailAction"
+			method="modifyAshjl">
+			<result name="success">/pages/ashjl/modifyAshjl.ftl</result>
+		</action>
+	</package>
+</xwork>

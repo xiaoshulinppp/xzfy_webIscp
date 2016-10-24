@@ -1,0 +1,227 @@
+
+function addField() {
+   searchEditor.addField();  
+}
+function addExp(){
+	searchEditor.addExp();
+}
+
+function removeExp(){
+	searchEditor.removeExp();
+}
+
+function submitSearch(){
+	searchEditor.submit();
+}
+
+function addBracket(){
+	searchEditor.addBracket();
+}
+
+function removeBracket(){
+	searchEditor.removeBracket();
+}
+
+
+
+function SearchEditor(){
+	var field_dict;
+	var field_type;
+	var value_input;
+	var value_input_hide;
+	var exp_show_element;
+	var exp_value_element;
+	var exp_show_value_element;
+	var form_element;
+	var field_element;
+	var table_element;
+
+	var exp_items;
+
+	this.init = function(field_dict_,field_type_){
+
+		this.field_dict = field_dict_;
+		this.field_type = field_type_;
+		this.value_input = document.getElementById("value_input");
+		this.value_input_hide =document.getElementById("value_input_hide");
+		this.exp_show_element = document.getElementById("exp_show");
+		this.exp_show_value_element = document.getElementById("exp_show_value");
+		this.exp_value_element = document.getElementById("exp_value");
+		this.form_element = document.getElementById("search_form");
+		this.field_element = document.getElementById("field_element");
+		this.table_element = document.getElementById("table_element");
+		this.exp_items = new Array(0);
+	}
+
+
+	this.getSelectedIndex = function(select){
+		for(var i=0;select.options != null && i<select.options.length;i++){
+			if(select.options[i].selected){
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	this.getSelected = function(select){
+		var i = this.getSelectedIndex(select);
+		if(i >= 0){
+			return select.options[i];
+		}
+	}
+	
+	this.addField = function() {	
+	  var value_for_show = this.value_input.value; 
+	  var field_element_show_value = this.getSelected(this.field_element).innerHTML;
+	  var table_element_show_value = this.getSelected(this.table_element).innerHTML;
+	  value_for_show=value_for_show+table_element_show_value+"."+field_element_show_value;
+	  this.value_input.value = value_for_show;
+	  
+	  
+	  var value_for_value = this.value_input_hide.value; 
+	  var field_element_value = this.getSelected(this.field_element).innerHTML;
+	  var table_element_value = this.getSelected(this.table_element).innerHTML;
+	  value_for_value=value_for_value+table_element_value+"."+table_element_value;
+	  this.value_input_hide.value = value_for_value;  
+	}
+
+
+	this.addExp = function(){
+		var value_for_value = this.value_input.value; 		
+		var value_for_show = this.value_input.value;
+	
+		var i = this.exp_show_element.options.length;
+		this.exp_items[i] = new ExpItem();				
+		this.exp_items[i].value = value_for_value;
+		this.exp_items[i].value_show = value_for_show;
+		this.exp_show_element.options[this.exp_show_element.options.length] = new Option();
+		this.exp_show_element.options[this.exp_show_element.options.length-1].innerHTML = this.getExpShow(this.exp_items[i]);
+	}
+
+	this.getExpShow = function(exp_item){
+		var exp = exp_item.value_show;
+		return exp;
+	}
+
+	this.removeExp = function(){
+		for(var i=0;this.exp_show_element.options != null && i<this.exp_show_element.options.length;i++){
+			if(this.exp_show_element.options[i].selected){
+				this.exp_show_element.options.removeChild(this.exp_show_element.options[i]);
+				this.exp_items.removeChild(exp_items[i]);
+				i--;
+			}
+		}
+		
+	}
+
+	this.submit = function(){
+	   if(this.exp_value_element.value=="")
+		 exp = " 1=1 ";
+	   else
+	     exp =" ";
+		for(var i=0;this.exp_items != null && i < this.exp_items.length;i++){
+			if(this.exp_items[i] != null){
+				exp +=  this.exp_items[i].toExp();
+			}
+		}
+		this.exp_value_element.value += exp;
+		var expshow ="";
+		for(var i=0;this.exp_items != null && i < this.exp_items.length;i++){
+			if(this.exp_items[i] != null){
+				expshow +=  this.getExpShow(this.exp_items[i])+",";
+			}
+		}
+		this.exp_show_value_element.value += expshow;
+		alert(document.getElementById("deptInput").value);
+		alert(document.getElementById("deptHide").value);
+		this.form_element.submit();
+	}
+
+	this.addBracket = function(){
+		var start = -1;
+		var end = -1;
+		for(var i=0;this.exp_show_element.options != null && i<this.exp_show_element.options.length;i++){
+			if(this.exp_show_element.options[i].selected){
+				end = i;
+				if(start == -1){
+					start = i;
+				}
+			}
+		}
+		if(start != -1){
+			if(start != end){
+				var bracketCount = this.exp_items[start].rightBracketCount;
+				bracketCount -= this.exp_items[end].leftBracketCount;
+				for(var i = start + 1;i < end;i++){
+					bracketCount += this.exp_items[i].rightBracketCount;
+					bracketCount -= this.exp_items[i].leftBracketCount;
+				}
+				if(bracketCount != 0 && bracketCount + this.exp_items[end].rightBracketCount - this.exp_items[start].leftBracketCount != 0){
+					alert("您不能这样添加括号");
+					return;
+				}
+			}
+			this.exp_items[start].leftBracketCount++;
+			this.exp_items[end].rightBracketCount++;
+			this.exp_show_element.options[start].innerHTML = this.getExpShow(this.exp_items[start]);
+			this.exp_show_element.options[end].innerHTML = this.getExpShow(this.exp_items[end]);
+		}
+	}
+
+	this.removeBracket = function(){
+		var index = this.getSelectedIndex(this.exp_show_element);
+		if(index >= 0){
+			if(this.exp_items[index].leftBracketCount > 0){
+				var bracketCount = 1 - this.exp_items[index].rightBracketCount;
+				this.exp_items[index].leftBracketCount--;
+				this.exp_show_element.options[index].innerHTML = this.getExpShow(this.exp_items[index]);
+				for(var i = index;i <this.exp_items.length;){
+					if(bracketCount <= 0){
+						this.exp_items[i].rightBracketCount --;
+						this.exp_show_element.options[i].innerHTML = this.getExpShow(this.exp_items[i]);
+						return;
+					}
+					i ++;
+					bracketCount += this.exp_items[i].leftBracketCount;
+					bracketCount -= this.exp_items[i].rightBracketCount;
+				}
+			}
+			else if(this.exp_items[index].rightBracketCount > 0){
+				var bracketCount = 1 - this.exp_items[index].leftBracketCount;
+				this.exp_items[index].rightBracketCount--;
+				this.exp_show_element.options[index].innerHTML = this.getExpShow(this.exp_items[index]);
+				for(var i = index;i >= 0;){
+					if(bracketCount <= 0){
+						this.exp_items[i].leftBracketCount --;
+						this.exp_show_element.options[i].innerHTML = this.getExpShow(this.exp_items[i]);
+						return;
+					}
+					i --;
+					bracketCount -= this.exp_items[i].leftBracketCount;
+					bracketCount += this.exp_items[i].rightBracketCount;
+				}
+			}
+		}
+	}
+
+	function ExpItem(){
+		var leftBracketCount;//
+		var rightBracketCount;//
+		var link;
+		var field;
+		var equation;
+		var value;
+
+		var link_show;
+		var field_show;
+		var equation_show;
+		var value_show;
+
+		this.toExp = function(){
+			var valueExp = this.value;
+			var exp =  valueExp;
+			return exp;
+		}
+	}
+}
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.taiji.fzb.domain">
+	<class name="XzfyKeyword" table="XZFY_KEYWORD">
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+		<property name="xzfy_id" type="java.lang.String" column="XZFY_ID" />
+		<property name="keyword" type="java.lang.String" column="KEYWORD" />
+		<property name="status" type="java.lang.String" column="STATUS" />
+		<property name="locbm" type="java.lang.String" column="LOCBM" />
+	</class>
+</hibernate-mapping>

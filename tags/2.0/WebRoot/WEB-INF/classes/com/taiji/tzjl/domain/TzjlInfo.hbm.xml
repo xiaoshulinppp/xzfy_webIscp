@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping package="com.taiji.tzjl.domain">
+<class 
+    name="TzjlInfo" 
+    table="TZJLINFO"
+    dynamic-insert="false" 
+    dynamic-update="false" 
+>
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="id"
+    >
+        <generator class="increment" />
+    </id>
+   <property
+        name="time"
+        type="java.lang.String"
+        column="time"
+      
+    />	
+
+    <property
+        name="location"
+        type="java.lang.String"
+        column="location"
+
+    />
+   <property
+        name="host"
+        type="java.lang.String"
+        column="host"
+ 
+    />	
+    <property
+        name="attendant"
+        type="java.lang.String"
+        column="attendant"
+	
+    />
+    <property 
+    	name="filePath"
+    	type="java.lang.String"
+    	column="filePath"
+    />
+    <property 
+    	name="realFilePath"
+    	type="java.lang.String"
+    	column="realFilePath"
+    />
+    <property 
+    	name="fileName"
+    	type="java.lang.String"
+    	column="fileName"
+    />
+    <property 
+    	name="hasAttachment"
+    	type="java.lang.String"
+    	column="hasAttachment"
+    />
+    <property 
+    	name="xzfyId"
+    	type="java.lang.String"
+    	column="xzfyId"
+    />
+ 
+			
+</class>
+</hibernate-mapping>

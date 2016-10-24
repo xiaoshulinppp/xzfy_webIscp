@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	
+	  xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"  
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+	
+	
+	
+	xsi:schemaLocation="  
+        	http://www.springframework.org/schema/beans   
+        	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+        	http://cxf.apache.org/jaxws  
+        	http://cxf.apache.org/schemas/jaxws.xsd
+           http://www.springframework.org/schema/context 
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       		http://www.springframework.org/schema/tx 
+       		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+      		 http://www.springframework.org/schema/task
+       		http://www.springframework.org/schema/task/spring-task-3.0.xsd    
+      		 http://www.springframework.org/schema/aop                      
+      		 http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+        	>
+	
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@192.168.1.132:1521:orcl</value>
+		</property>
+		<property name="username">
+			<value>xzfy</value>
+		</property>
+		<property name="password">
+			<value>xzfy</value>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="lobHandler">
+			<ref bean="oracleLobHandler" />
+		</property>
+
+
+	</bean>
+	<bean id="oracleLobHandler" class="org.springframework.jdbc.support.lob.OracleLobHandler"
+		lazy-init="true">
+		<property name="nativeJdbcExtractor">
+			<ref bean="nativeJdbcExtractor" />
+		</property>
+	</bean>
+	<bean id="nativeJdbcExtractor"
+		class="org.springframework.jdbc.support.nativejdbc.SimpleNativeJdbcExtractor" />
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+
+	</bean>
+	<bean id="myTransactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="baseTransactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref local="myTransactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="list*">
+					PROPAGATION_REQUIRED,-orderException,readOnly
+				</prop>
+				<prop key="get*">
+					PROPAGATION_REQUIRED,readOnly
+				</prop>
+				<prop key="save*">
+					PROPAGATION_REQUIRED
+				</prop>
+				<prop key="update*">
+					PROPAGATION_REQUIRED
+				</prop>
+				<prop key="delete*">
+					PROPAGATION_REQUIRED
+				</prop>
+				<prop key="remove*">
+					PROPAGATION_REQUIRED
+				</prop>
+				<prop key="batch*">
+					PROPAGATION_REQUIRED
+				</prop>
+				<prop key="*">
+					PROPAGATION_REQUIRED
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="recordpermInterceptor" class="com.taiji.core.service.RecordPermissionInterceptor">
+		<property name="securityService">
+			<ref local="securityService" />
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<value>*Service</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>baseTransactionProxy</value>
+				<value>recordpermInterceptor</value>
+			</list>
+		</property>
+	</bean>
+
+
+    <bean class="com.taiji.waiwangTB.MyApplicationContextUtil"></bean>
+	<bean
+		class="org.springframework.transaction.interceptor.TransactionAttributeSourceAdvisor">
+		<property name="transactionInterceptor" ref="baseTransactionProxy" />
+	</bean>
+	<bean id="entityDAO" class="com.taiji.core.dao.impl.HibernateDAOImpl"
+		autowire="byName" />
+	<bean id="coreService" class="com.taiji.core.service.impl.CoreServiceImpl"
+		autowire="byName" />
+	<bean id="userService" class="com.taiji.user.service.impl.UserServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="webUserService" class="com.taiji.user.service.impl.WebUserServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="webSimpleUserService"
+		class="com.taiji.user.service.impl.WebSimpleUserServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="orgService" class="com.taiji.user.service.impl.OrgServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="webOrgService" class="com.taiji.user.service.impl.WebOrgServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="roleService" class="com.taiji.user.service.impl.RoleServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="permissionService"
+		class="com.taiji.user.service.impl.PermissionServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="funcPermService" class="com.taiji.user.service.impl.FuncPermServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="operationService" class="com.taiji.user.service.impl.OperationServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="functionService"
+		class="com.taiji.system.service.impl.FunctionServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="mappingTableService"
+		class="com.taiji.system.service.impl.MappingTableServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="fieldService" class="com.taiji.system.service.impl.FieldServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="dictionaryService"
+		class="com.taiji.system.service.impl.DictionaryServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="securityService" class="com.taiji.core.security.impl.SecurityServiceImpl"
+		autowire="byName" />
+	<bean id="postAssignService"
+		class="com.taiji.system.service.impl.PostAssignServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="positionService"
+		class="com.taiji.system.service.impl.PositionServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="ptreeService" class="com.taiji.system.service.impl.PtreeServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="searchstateService"
+		class="com.taiji.system.service.impl.SearchstateServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="exportExcelFileService"
+		class="com.taiji.system.service.impl.ExportExcelFileServiceDefaultImpl"
+		autowire="byName" />
+	<bean id="logService" class="com.taiji.system.service.impl.LogServiceImpl"
+		autowire="byName" />
+	<bean id="appLogService" class="com.taiji.system.service.impl.AppLogServiceImpl"
+		autowire="byName" />
+
+	<bean id="xzfyService" class="com.taiji.fzb.service.impl.XzfyServiceImpl"
+		autowire="byName" />
+
+	<!-- WebIscp -->
+	<bean id="newUserService" class="com.taiji.newUser.service.impl.NewUserServiceImpl"
+		autowire="byName" />
+	<bean id="wtTemplateService"
+		class="com.taiji.webTemplate.service.impl.WtTemplateServiceImpl"
+		autowire="byName" />
+	<bean id="wtClassifyService"
+		class="com.taiji.webTemplate.service.impl.WtClassifyServiceImpl"
+		autowire="byName" />
+	<!-- Template -->
+	<bean id="newsTemplateService"
+		class="com.taiji.app.webTemplate.news.service.impl.NewsTemplateServiceImpl"
+		autowire="byName" />
+	<bean id="bananService" class="com.taiji.fzb.service.impl.BananServiceImpl"
+		autowire="byName" />
+	<bean id="tzjlService" class="com.taiji.tzjl.service.impl.TzjlServiceImpl"
+		autowire="byName" />
+	<bean id="ashjlService" class="com.taiji.ashjl.service.impl.AshjlServiceImpl"
+		autowire="byName" />
+	<bean id="bsqrService" class="com.taiji.fzb.service.impl.BsqrServiceImpl"
+		autowire="byName" />
+	<bean id="recordService" class="com.taiji.fzb.service.impl.RecordServiceImpl"
+		autowire="byName" />
+	<bean id="xzcjService" class="com.taiji.fzb.service.impl.XzcjServiceImpl"
+		autowire="byName" />
+	<bean id="xzssService" class="com.taiji.fzb.service.impl.XzssServiceImpl"
+		autowire="byName" />
+	<bean id="comService" class="com.taiji.fzb.service.impl.ComServiceImpl"
+		autowire="byName" />
+	<bean id="ajService" class="com.taiji.ajgl.service.impl.AjServiceImpl"
+		autowire="byName" />
+	<bean id="datumService" class="com.taiji.datum.service.impl.DatumServiceImpl"
+		autowire="byName" />
+	<bean id="articleService" class="com.taiji.website.service.impl.ArticleServiceImpl"
+		autowire="byName" />
+	<bean id="scheduleService" class="com.taiji.schedule.service.impl.ScheduleServiceImpl"
+		autowire="byName" />
+	<bean id="xzfyStatisticsService" class="com.taiji.fzb.service.impl.XzfyStatisticsServiceImpl"
+		autowire="byName" />
+	<bean id="materialService" class="com.taiji.fzb.service.impl.MaterialServiceImpl"
+		autowire="byName" />
+	<bean id="tongJiService"
+		class="com.taiji.tongJi.action.tongJiService.impl.TongJiServiceImpl"
+		autowire="byName" />
+	<bean id="jtfyajslTongjiService" class="com.taiji.fzb.service.impl.JtfyajslTongjiServiceImpl"
+		autowire="byName" />
+	<bean id="meetService" class="com.taiji.meet.service.impl.MeetServiceImpl"
+		autowire="byName" />
+	<bean id="archiveService" class="com.taiji.archive.service.impl.ArchiveServiceImpl"
+		autowire="byName" />
+		
+	<bean id="xztjStatService" class="com.taiji.xztj.service.impl.XztjStatServiceImpl"
+		autowire="byName" />
+		
+	<bean id="vacationService" class="com.taiji.fzb.service.impl.VacationServiceImpl" autowire="byName"/>
+
+	<bean id="xzfySearchService" class="com.taiji.fzb.service.impl.XzfySearchServiceImpl" autowire="byName"/>
+
+	<!-- CXF webservices 客户端配置 -->
+	<!--  <jaxws:client id="client"
+		serviceClass="com.dataSync.service.Services"
+		address="http://localhost:8080/zxfy/fyservices/Services">
+		<jaxws:outInterceptors>
+			<bean class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+			<bean class="org.apache.cxf.binding.soap.saaj.SAAJOutInterceptor" />
+			<bean class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor">
+				<constructor-arg>
+					<map>
+						<entry key="action" value="UsernameToken" />
+						<entry key="passwordType" value="PasswordDigest" />
+						<entry key="user" value="user_name" />
+						<entry key="passwordCallbackRef">
+							<ref bean="clientPasswordCallback" />
+						</entry>
+					</map>
+				</constructor-arg>
+			</bean>
+		</jaxws:outInterceptors>
+	</jaxws:client> -->
+	<bean id="clientPasswordCallback"
+		class="com.unionfly.completesyn.security.ClientPasswordCallback" />
+	
+	<!-- 新的定时任务配置 -->
+		<!-- <beans xmlns="http://www.springframework.org/schema/beans"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"  
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-3.0.xsd    
+       http://www.springframework.org/schema/aop                      
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd      
+       "> 
+          -->
+        <!-- 扫描有相关标记的bean，初始化，交给spring管理-->
+   <!--  <context:component-scan base-package="com.taiji.waiwangTB.Quartz" /> 
+     
+    注入属性
+    <bean id="quartz" class="com.taiji.waiwangTB.Quartz">
+       <property name="a" value="zhangsan" >
+          
+        </property>
+    </bean> -->
+<!-- 第二个配置文件 -->
+	<!-- <task:annotation-driven />   --> <!-- 定时器开关 -->
+
+	 <!-- <bean id="myTaskXml" class="com.spring.task.MyTaskXml"></bean>
+
+	<task:scheduled-tasks>
+		
+			这里表示的是每隔五秒执行一次 
+		
+		<task:scheduled ref="myTaskXml" method="show" cron="*/5 * * * * ?" />
+		<task:scheduled ref="myTaskXml" method="print" cron="*/10 * * * * ?"/>
+	</task:scheduled-tasks>
+	
+   自动扫描的包名   
+    <context:component-scan base-package="com.spring.task" /> -->
+	
+	
+<!-- 	
+	第二个任务…………
+	<bean id="check_Tb" class="com.taiji.waiwangTB.Check_Tb">
+	<property name="xzfyService">
+			<ref local="xzfyService" />
+	</property>
+	</bean>
+
+	  <task:scheduled-tasks>
+		
+			这里表示的是每隔五秒执行一次 
+		
+		<task:scheduled ref="check_Tb" method="testcheck" cron="*/5 * * * * ?" />
+		<task:scheduled ref="check_Tb" method="check_status" cron="*/100 * * * * ?"/>
+	</task:scheduled-tasks>
+	
+   自动扫描的包名   
+    <context:component-scan base-package="com.taiji.waiwangTB" /> -->
+		
+	<bean name="xzfyInfoTriggerBean" class="org.springframework.scheduling.quartz.JobDetailBean">  
+		<property name="jobClass" value="com.taiji.waiwangTB.Check_Tb" />  
+			<property name="jobDataAsMap">  
+			<map>  
+				<entry key="timeout" value="0" />  
+			</map>  
+		</property>  
+	</bean> 
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+		<property name="jobDetail" ref="xzfyInfoTriggerBean" />  
+		<property name="cronExpression" value="0 0 6 * * ?" />  
+	</bean>
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">  
+		<property name="triggers">  
+		<list>  
+			<ref bean="cronTrigger" />  
+		</list>  
+		</property>  
+	</bean>	
+		
+</beans>

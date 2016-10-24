@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.taiji.fzb.domain">
+    <class name="XzfyShenpi" table="XZFY_SHENPI" >
+    
+    <id name="id"  type="java.lang.Integer" column="id">
+    	<generator class="increment"/>
+    </id>
+    		<property name="check_type" type="java.lang.String">
+                <column name="CHECK_TYPE" length="20" />
+            </property>
+            
+            <property name="check_id" type="java.lang.String">
+                <column name="CHECK_ID" length="20" />
+            </property>
+           
+            <property name="check_name" type="java.lang.String">
+                <column name="CHECK_NAME" length="20" />
+            </property>
+            
+            <property name="check_result" type="java.lang.String">
+                <column name="CHECK_RESULT" length="20" />
+            </property>
+            
+            <property name="check_advise" type="java.lang.String">
+                <column name="CHECK_ADVISE" length="20" />
+            </property>
+            
+            <property name="check_date" type="java.lang.String">
+                <column name="CHECK_DATE" length="20" />
+            </property>
+            
+            <property name="sqspren_id" type="java.lang.String">
+                <column name="SQSPREN_ID" length="20" />
+            </property>
+          
+            <property name="sqspren_name" type="java.lang.String">
+                <column name="SQSPREN_NAME" length="20" />
+            </property>
+            
+		    <many-to-one name="xzfyInfo" cascade="all" lazy="false"
+			column="xzfy_id" class="XzfyInfo"  />
+       
+    
+    </class>
+</hibernate-mapping>

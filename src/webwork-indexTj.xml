@@ -1,0 +1,28 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="zbtj" extends="default" namespace="/zbtj">
+		<default-interceptor-ref name="autowireDefault" />
+		
+		<action name="showQueryPanel" class="com.taiji.tongJi.action.IndexTjAction"
+			method="showQueryPanel">
+			<result name="success">/pages/indexTj/queryPanel.ftl</result>
+		</action>
+		
+		<action name="getJustIndexTj" class="com.taiji.tongJi.action.IndexTjAction"
+			method="getJustIndexTj">
+			<result name="success">/pages/indexTj/justIndexPage.ftl</result>
+		</action>
+		
+		<action name="getEftIndexTj" class="com.taiji.tongJi.action.IndexTjAction"
+			method="getEftIndexTj">
+			<result name="success">/pages/indexTj/efctIndexPage.ftl</result>
+		</action>
+		
+
+    </package>
+
+
+</xwork>

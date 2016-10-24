@@ -1,0 +1,45 @@
+<!DOCTYPE xwork 
+          PUBLIC 
+          "-//OpenSymphony Group//XWork 1.0//EN" 
+          "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+	<package name="gjcx" extends="default" namespace="/gjcx">
+		<default-interceptor-ref name="autowireDefault" />
+		
+	<action name="anjiancx" class="com.taiji.fzb.webwork.XzfyAdvancedSearch"
+			method="anjiancx">
+			<result name="success">/pages/huntings/show_query_result2.ftl</result>
+		</action>
+		<action name="anjiancx_gao" class="com.taiji.fzb.webwork.XzfyAdvancedSearch"
+			method="anjiancx">
+			<result name="success">/pages/huntings/show_query_result2_gao.ftl</result>
+		</action>
+		
+		<action name="showQueryRequirement" class="com.taiji.fzb.webwork.XzfyAdvancedSearch"
+			method="showQueryRequirement">
+			<result name="success">/pages/huntings/show_query_requirement.ftl</result>
+		</action>
+		
+		<action name="showQueryResult" class="com.taiji.fzb.webwork.XzfyAdvancedSearch"
+			method="showQueryResult">
+			<result name="success">/pages/huntings/show_query_result.ftl</result>
+		</action>
+		
+		<action name="showSeparateRequirement" class="com.taiji.fzb.webwork.XzfyAdvancedSearch"
+			method="showSeparateRequirement">
+			<result name="success">/pages/huntings/show_separate_requirement.ftl</result>
+		</action>
+		
+		<action name="showSeparateQueryResult" class="com.taiji.fzb.webwork.XzfyAdvancedSearch"
+			method="showSeparateQueryResult">
+			<result name="success">/pages/huntings/show_separate_result.ftl</result>
+		</action>
+		
+		<action name="deleteInfo" class="com.taiji.fzb.webwork.XzfyAdvancedSearch"
+			method="deleteInfo">
+			<result  name="success"  type="chain">
+				<param name="actionName">showSeparateQueryResult</param>
+			</result>
+		</action>
+	</package>
+</xwork>
